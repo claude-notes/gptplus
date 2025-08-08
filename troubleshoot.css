@@ -1,0 +1,120 @@
+.nav-link.active-link {
+    color: var(--color-text-strong);
+}
+
+.nav-link.active-link::after {
+    width: 100%;
+    background-image: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+}
+
+.video-container {
+    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.2), 0 0 0 1px var(--color-border);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.video-container:hover {
+    box-shadow: 0 25px 60px -12px var(--color-glow), 0 0 0 1px var(--color-primary);
+    transform: scale(1.02);
+}
+
+body.light-mode .video-container {
+     box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.1), 0 0 0 1px var(--color-border);
+}
+
+
+.troubleshoot-card {
+    background: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .troubleshoot-card {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+}
+
+.troubleshoot-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primary);
+    box-shadow: 0 10px 30px -10px var(--color-glow);
+}
+
+.troubleshoot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.troubleshoot-step-number {
+    background-color: var(--color-code-bg);
+    color: var(--color-text-strong);
+    font-weight: bold;
+    width: 2.25rem;
+    height: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    font-size: 1.125rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+    border: 1px solid var(--color-border);
+    transition: all 0.3s ease-in-out;
+}
+
+.troubleshoot-icon {
+    transition: transform 0.3s ease-in-out;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    color: var(--color-text);
+}
+
+.troubleshoot-header:hover .troubleshoot-icon {
+    color: var(--color-text-strong);
+}
+
+.troubleshoot-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), padding 0.5s cubic-bezier(0, 1, 0, 1);
+    padding: 0 1.5rem 0 5.25rem;
+}
+
+.troubleshoot-content p, .troubleshoot-content ul {
+    line-height: 1.75;
+}
+
+.troubleshoot-card.active {
+    border-color: var(--color-primary);
+}
+
+.troubleshoot-card.active .troubleshoot-header {
+    color: var(--color-primary);
+}
+
+.troubleshoot-card.active .troubleshoot-step-number {
+    border-color: var(--color-primary);
+    background-image: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+}
+
+.troubleshoot-card.active .troubleshoot-icon {
+    color: var(--color-primary);
+}
+
+.troubleshoot-card.active .troubleshoot-content {
+    max-height: 500px;
+    padding-top: 0;
+    padding-bottom: 1.5rem;
+    padding-right: 1.5rem;
+    padding-left: 5.25rem;
+    transition: max-height 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), padding 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
