@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自助排查 - ChatGPT Plus 代充服务</title>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/troubleshoot.css">
+    <!-- 添加 favicon -->
+    <link rel="icon" href="../image/logo.png" type="image/png">
+</head>
+<body class="font-sans antialiased transition-colors duration-500">
+
+<div id="root">
+    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="inline-flex items-center gap-2 font-bold text-strong text-xl leading-none">
+                <img src="../image/logo.png" alt="logo"
+                     class="w-7 h-7 shrink-0 inline-block align-middle">
+                <span>ChatGPT Plus <span class="text-sky-400">专业代充服务</span></span>
+            </a>
+            <div class="flex items-center">
+                <div class="hidden md:flex items-center space-x-8 mr-8">
+                    <a href="index.html" class="nav-link flex items-center">
+                        <i data-lucide="home" class="w-5 h-5 mr-1.5"></i> 首页
+                    </a>
+                    <a href="troubleshoot.html" class="nav-link flex items-center">
+                        <i data-lucide="wrench" class="w-5 h-5 mr-1.5"></i> 自助排查
+                    </a>
+                    <a href="faq.html" class="nav-link flex items-center">
+                        <i data-lucide="help-circle" class="w-5 h-5 mr-1.5"></i> 常见问题
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="hidden md:block theme-toggle-btn" aria-label="切换主题">
+                        <i data-lucide="sun" class="w-6 h-6"></i>
+                    </button>
+                    <button id="mobile-menu-button" class="md:hidden text-strong" aria-label="打开导航菜单">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden backdrop-blur-lg">
+            <div class="px-6 pt-2 pb-4 space-y-2">
+                <a href="index.html" class="nav-link flex items-center">
+                    <i data-lucide="home" class="w-5 h-5 mr-1.5"></i> 首页
+                </a>
+                <a href="troubleshoot.html" class="nav-link flex items-center">
+                    <i data-lucide="wrench" class="w-5 h-5 mr-1.5"></i> 自助排查
+                </a>
+                <a href="faq.html" class="nav-link flex items-center">
+                    <i data-lucide="help-circle" class="w-5 h-5 mr-1.5"></i> 常见问题
+                </a>
+                <div class="pt-4 mt-4 border-t border-slate-700 flex justify-center">
+                    <button id="mobile-theme-toggle" class="theme-toggle-btn" aria-label="切换主题">
+                        <i data-lucide="sun" class="w-7 h-7"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24">
+        <section class="container mx-auto px-6 py-16 text-center animate-section">
+            <div class="inline-block bg-sky-400/10 text-sky-400 text-sm px-4 py-1 rounded-full mb-4">
+                一步步解决问题
+            </div>
+            <h1 class="text-5xl md:text-6xl font-extrabold text-strong mb-4">
+                充值问题自助排查
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg">
+                遇到充值问题？别担心，请按照以下步骤排查。<br/>大部分问题都可以通过这些方法解决。
+            </p>
+        </section>
+
+        <section class="container mx-auto px-6 py-10 animate-section" style="transition-delay: 100ms;">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-strong">第一步：观看视频教程</h2>
+                <p class="max-w-2xl mx-auto text-lg mt-4">请先观看完整的充值操作视频，确保您的操作流程无误。</p>
+            </div>
+            <div class="video-container aspect-video rounded-xl overflow-hidden">
+                <video controls autoplay loop muted class="w-full h-full object-cover">
+                    <source src="http://cloud.video.taobao.com/play/u/null/p/1/e/6/t/1/514196921671.mp4"
+                            type="video/mp4">
+                    您的浏览器不支持视频播放。
+                </video>
+            </div>
+        </section>
+
+        <section class="container mx-auto px-6 py-20 animate-section" style="transition-delay: 200ms;">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-strong">第二步：逐项问题排查</h2>
+                <p class="max-w-2xl mx-auto text-lg mt-4">如果观看视频后问题仍未解决，请点击下方项目查看详细解决方案。</p>
+            </div>
+            <div id="troubleshoot-accordion" class="max-w-4xl mx-auto space-y-6">
+
+                <div class="troubleshoot-card">
+                    <div class="troubleshoot-header">
+                        <div class="flex items-center">
+                            <div class="troubleshoot-step-number">1</div>
+                            <span class="font-semibold text-strong">网络环境问题</span>
+                        </div>
+                        <i data-lucide="plus-circle" class="troubleshoot-icon"></i>
+                    </div>
+                    <div class="troubleshoot-content">
+                        <p>充值过程需要在能够正常访问OpenAI官网的网络环境下进行。请确保您的代理或VPN工作正常。</p>
+                        <ul class="list-disc pl-5 mt-3 space-y-1">
+                            <li><strong>测试方法：</strong> 在浏览器新标签页中打开 <a href="https://chat.openai.com"
+                                                                                     target="_blank"
+                                                                                     class="text-sky-400 hover:underline">chat.openai.com</a>，看是否能正常访问。
+                            </li>
+                            <li><strong>解决方案：</strong> 如果无法访问，请尝试切换代理节点(推荐美国、日本、新加坡等)，或更换代理工具后重试。
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="troubleshoot-card">
+                    <div class="troubleshoot-header">
+                        <div class="flex items-center">
+                            <div class="troubleshoot-step-number">2</div>
+                            <span class="font-semibold text-strong">浏览器缓存或插件冲突</span>
+                        </div>
+                        <i data-lucide="plus-circle" class="troubleshoot-icon"></i>
+                    </div>
+                    <div class="troubleshoot-content">
+                        <p>浏览器旧的缓存数据或某些插件可能会干扰充值流程。</p>
+                        <ul class="list-disc pl-5 mt-3 space-y-1">
+                            <li><strong>解决方案A：</strong> 清除浏览器缓存。在浏览器设置中找到“清除浏览数据”选项，选择清除缓存文件和Cookie。
+                            </li>
+                            <li><strong>解决方案B (推荐)：</strong> 使用浏览器的“无痕模式”或“隐私窗口”进行充值操作。无痕模式下不会加载插件和缓存，可以有效排除干扰。
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="troubleshoot-card">
+                    <div class="troubleshoot-header">
+                        <div class="flex items-center">
+                            <div class="troubleshoot-step-number">3</div>
+                            <span class="font-semibold text-strong">账号仍在Plus有效期内 或 之前充值过Team计划</span>
+                        </div>
+                        <i data-lucide="plus-circle" class="troubleshoot-icon"></i>
+                    </div>
+                    <div class="troubleshoot-content">
+                        <p>
+                            根据OpenAI的规定，您无法为尚未过期的Plus会员账户续费。必须等待当前订阅周期结束后才能进行下一次充值。<br/>
+                            而且由于最新政策改变，之前充值过Team计划的用户无法通过该途径充值Plus会员，请另起新号或直接官网充值
+                        </p>
+                        <ul class="list-disc pl-5 mt-3 space-y-1">
+                            <li><strong>如何检查有效期：</strong> 登录ChatGPT官网 → 点击左下角您的用户名 → 选择 "设置"
+                                → 查看"帐户"状态。
+                            </li>
+                            <li><strong>解决方案：</strong> 请在您的Plus会员过期后再来充值。</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="troubleshoot-card">
+                    <div class="troubleshoot-header">
+                        <div class="flex items-center">
+                            <div class="troubleshoot-step-number">4</div>
+                            <span class="font-semibold text-strong">其他未知问题</span>
+                        </div>
+                        <i data-lucide="plus-circle" class="troubleshoot-icon"></i>
+                    </div>
+                    <div class="troubleshoot-content">
+                        <p>如果您已尝试以上所有方法但问题依旧存在，请不要担心。</p>
+                        <ul class="list-disc pl-5 mt-3 space-y-1">
+                            <li><strong>最终解决方案：</strong> 立即联系我们的在线客服。请准备好您的订单号和问题截图，我们的技术支持将为您提供一对一的帮助。
+                            </li>
+                            <li><strong>联系客服微信 👉  YueShiwa </strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="mt-20">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-bold text-strong mb-4">ChatGPT Plus代充服务</h4>
+                    <p class="text-sm">专业的AI充值平台，我们提供安全、快捷、稳定的ChatGPT Plus代充服务。</p>
+                    <div class="flex space-x-4 mt-4 text-sky-400">
+                        <div class="flex items-center gap-2 text-sm"><i data-lucide="shield-check" class="w-4 h-4"></i>
+                            安全可靠
+                        </div>
+                        <div class="flex items-center gap-2 text-sm"><i data-lucide="zap" class="w-4 h-4"></i> 快速简单
+                        </div>
+                        <div class="flex items-center gap-2 text-sm"><i data-lucide="dollar-sign" class="w-4 h-4"></i>
+                            价格优惠
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-strong mb-4">服务导航</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html#intro" class="footer-link">购买ChatGPT Plus卡密</a></li>
+                        <li><a href="index.html#intro" class="footer-link recharge-btn">开始ChatGPT Plus充值</a></li>
+                        <li><a href="index.html#process" class="footer-link">ChatGPT Plus充值流程</a></li>
+                        <li><a href="troubleshoot.html" class="footer-link">ChatGPT Plus充值自助排查</a></li>
+                        <li><a href="faq.html" class="footer-link">ChatGPT Plus代充常见问题</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-strong mb-4">联系我们</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>微信：YueShiwa</li>
+                        <li>已服务数万用户</li>
+                        <li>7×24小时客服</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-strong mb-4">为什么选择我们？</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>• 正规渠道，安全无风险</li>
+                        <li>• 低汇率充值，价格更优惠</li>
+                        <li>• 20秒快速充值，立即生效</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t-themed text-center text-sm footer-bottom flex justify-center items-center">
+                <p>© 2025 ChatGPT Plus代充服务. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="../js/script.js"></script>
+<script src="../js/troubleshoot.js"></script>
+</body>
+</html>
