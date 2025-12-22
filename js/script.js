@@ -219,6 +219,79 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Shop More Modal
+    const shopMoreButtons = [
+        document.getElementById('shop-more-btn'),
+        document.getElementById('mobile-shop-more-btn')
+    ];
+    const shopMoreModal = document.getElementById('shop-more-modal');
+    const shopModalOverlay = document.getElementById('shop-modal-overlay');
+    const shopModalCloseBtn = document.getElementById('shop-modal-close-btn');
+    const countdownTimer = document.getElementById('countdown-timer');
+    const shopUrl = 'https://fe.dtyuedan.cn/shop/yueshi';
+
+    let countdownInterval = null;
+
+    if (shopMoreModal) {
+        const openShopModal = () => {
+            shopMoreModal.classList.add('is-visible');
+            document.body.style.overflow = 'hidden';
+            lucide.createIcons();
+
+            // Start countdown
+            let count = 3;
+            countdownTimer.textContent = count;
+
+            countdownInterval = setInterval(() => {
+                count--;
+                if (count > 0) {
+                    countdownTimer.textContent = count;
+                } else {
+                    clearInterval(countdownInterval);
+                    countdownInterval = null;
+                    // Redirect to shop
+                    window.open(shopUrl, '_blank');
+                    closeShopModal();
+                }
+            }, 1000);
+        };
+
+        const closeShopModal = () => {
+            shopMoreModal.classList.remove('is-visible');
+            document.body.style.overflow = '';
+
+            // Clear countdown
+            if (countdownInterval) {
+                clearInterval(countdownInterval);
+                countdownInterval = null;
+            }
+            countdownTimer.textContent = '3';
+        };
+
+        shopMoreButtons.forEach(btn => {
+            if (btn) {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openShopModal();
+                });
+            }
+        });
+
+        if (shopModalOverlay) {
+            shopModalOverlay.addEventListener('click', closeShopModal);
+        }
+
+        if (shopModalCloseBtn) {
+            shopModalCloseBtn.addEventListener('click', closeShopModal);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && shopMoreModal.classList.contains('is-visible')) {
+                closeShopModal();
+            }
+        });
+    }
 });
 
 function copyWeixin() {

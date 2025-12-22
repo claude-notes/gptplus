@@ -496,3 +496,115 @@ body.light-mode .proxy-warning p {
     }
 }
 
+/* Shop More Button Styles */
+.shop-more-btn {
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.5rem;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(168, 85, 247, 0.15));
+    border: 1.5px solid rgba(139, 92, 246, 0.5);
+    color: var(--color-text-strong);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.shop-more-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.3), transparent);
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+.shop-more-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.shop-more-btn:hover {
+    border-color: rgba(168, 85, 247, 0.8);
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+    transform: translateY(-2px);
+}
+
+body.light-mode .shop-more-btn {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(168, 85, 247, 0.1));
+    border-color: rgba(139, 92, 246, 0.6);
+}
+
+body.light-mode .shop-more-btn:hover {
+    border-color: rgba(139, 92, 246, 1);
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+}
+
+/* Shop More Modal Styles */
+#shop-more-modal.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#shop-more-modal.is-visible #shop-modal-content {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+#shop-modal-content {
+    background-color: var(--color-card-bg-opaque);
+    border: 1px solid var(--color-border);
+    background-image: radial-gradient(circle at top, rgba(139, 92, 246, 0.15), transparent 50%),
+                      radial-gradient(circle at bottom, rgba(168, 85, 247, 0.1), transparent 50%);
+    opacity: 0;
+    transform: scale(0.95) translateY(1rem);
+}
+
+body.light-mode #shop-modal-content {
+    background-image: radial-gradient(circle at top, rgba(139, 92, 246, 0.1), transparent 50%),
+                      radial-gradient(circle at bottom, rgba(168, 85, 247, 0.08), transparent 50%);
+}
+
+.shop-proxy-warning {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    padding: 0.875rem 1.25rem;
+    border-radius: 0.625rem;
+    box-shadow: 0 2px 12px rgba(251, 191, 36, 0.5);
+    animation: pulse-warning 2s ease-in-out infinite;
+}
+
+.shop-proxy-warning p {
+    color: #78350f;
+    font-size: 1rem;
+    margin: 0;
+}
+
+body.light-mode .shop-proxy-warning {
+    background: linear-gradient(135deg, #fef08a, #fde047);
+    box-shadow: 0 2px 12px rgba(250, 204, 21, 0.5);
+}
+
+body.light-mode .shop-proxy-warning p {
+    color: #713f12;
+}
+
+#countdown-timer {
+    animation: countdown-pulse 1s ease-in-out infinite;
+}
+
+@keyframes countdown-pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
