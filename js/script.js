@@ -1,6 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
     lucide.createIcons();
 
+    const isNestedPage = window.location.pathname.replace(/\\/g, '/').includes('/html/');
+    if (isNestedPage) {
+        const homeHrefMap = {
+            '#': '../index.html',
+            'index.html': '../index.html',
+            'index.html#intro': '../index.html#intro',
+            'index.html#process': '../index.html#process'
+        };
+
+        document.querySelectorAll('a[href]').forEach(anchor => {
+            const href = anchor.getAttribute('href');
+            const nextHref = homeHrefMap[href];
+
+            if (nextHref) {
+                anchor.setAttribute('href', nextHref);
+            }
+        });
+    }
+
     const sections = document.querySelectorAll('.animate-section');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
