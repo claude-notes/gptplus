@@ -7,7 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
             '#': '../index.html',
             'index.html': '../index.html',
             'index.html#intro': '../index.html#intro',
-            'index.html#process': '../index.html#process'
+            'index.html#payment-support': '../index.html#payment-support',
+            'index.html#process': '../index.html#process',
+            'index.html#faq-preview': '../index.html#faq-preview',
+            'index.html#support': '../index.html#support'
         };
 
         document.querySelectorAll('a[href]').forEach(anchor => {
@@ -19,6 +22,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    const currentPath = window.location.pathname.replace(/\\/g, '/');
+    const currentPage = currentPath.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-link').forEach(link => {
+        const rawHref = link.getAttribute('href') || '';
+        const normalizedHref = rawHref.replace(/^\.\.\//, '');
+
+        const isHomeLink = currentPage === 'index.html' && normalizedHref === 'index.html';
+        const isCurrentPageLink = normalizedHref.endsWith(currentPage);
+
+        if (isHomeLink || isCurrentPageLink) {
+            link.classList.add('active-link');
+        }
+    });
 
     const sections = document.querySelectorAll('.animate-section');
     const observer = new IntersectionObserver((entries) => {

@@ -1,0 +1,30 @@
+# ChatGPT Plus Recharge Service
+
+> Chinese landing pages for ChatGPT Plus recharge, card purchase, FAQ, troubleshooting, and WeChat support. The site clearly states support for WeChat Pay and Alipay and is designed for users without an international credit card.
+
+## Core Pages
+
+- `/` : Homepage with ChatGPT Plus recharge overview, payment methods, purchase entry, FAQ preview, and support contact.
+- `/html/faq.html` : FAQ page covering WeChat Pay, Alipay, account safety, recharge timing, active Plus subscription limits, and paid-but-not-credited issues.
+- `/html/troubleshoot.html` : Troubleshooting page covering network issues, payment page access issues, browser conflicts, paid-but-not-credited issues, and support escalation.
+
+## Payment
+
+- Supports WeChat Pay
+- Supports Alipay
+- No international credit card required
+
+## Support
+
+- WeChat support: `YueShiwa`
+- Chinese-language support content
+- Order, payment, and recharge issues can be escalated to human support
+
+## Key Topics
+
+- ChatGPT Plus recharge
+- ChatGPT Plus top-up
+- ChatGPT Plus WeChat Pay
+- ChatGPT Plus Alipay
+- ChatGPT Plus FAQ
+- ChatGPT Plus troubleshooting

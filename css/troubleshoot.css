@@ -8,53 +8,143 @@
 }
 
 .video-container {
-    box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.2), 0 0 0 1px var(--color-border);
+    border-radius: 1.6rem;
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    box-shadow: 0 34px 84px -58px rgba(2, 6, 23, 0.98);
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+.troubleshoot-page-intro p,
+.troubleshoot-section-intro p {
+    text-align: center;
+    text-align-last: center;
+}
+
+.troubleshoot-section-intro h2 {
+    max-width: none;
+    white-space: nowrap;
+    text-wrap: nowrap;
+    word-break: keep-all;
+    font-size: clamp(1.2rem, 4.9vw, 2.5rem);
+}
+
+.troubleshoot-page-intro h1 {
+    max-width: none;
+    white-space: nowrap;
+    text-wrap: nowrap;
+    word-break: keep-all;
+    font-size: clamp(1.3rem, 5.4vw, 3.75rem);
+}
+
+.troubleshoot-page-intro {
+    padding-bottom: clamp(4rem, 8vw, 6rem) !important;
+}
+
+.troubleshoot-summary-section {
+    padding-top: clamp(1.5rem, 4vw, 3rem);
+}
+
+.troubleshoot-summary-card {
+    align-items: center;
+    text-align: center;
+}
+
+.troubleshoot-summary-card i {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.troubleshoot-summary-card h2,
+.troubleshoot-summary-card p {
+    text-align: center;
+    text-align-last: center;
+}
+
+.troubleshoot-summary-card p {
+    max-width: 24ch;
+}
+
 .video-container:hover {
-    box-shadow: 0 25px 60px -12px var(--color-glow), 0 0 0 1px var(--color-primary);
-    transform: scale(1.02);
+    box-shadow: 0 38px 92px -58px rgba(2, 6, 23, 0.96);
+    transform: translateY(-2px);
 }
 
 body.light-mode .video-container {
-     box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.1), 0 0 0 1px var(--color-border);
+     box-shadow: 0 34px 84px -58px rgba(15, 23, 42, 0.18);
 }
 
 
 .troubleshoot-card {
-    background: var(--color-card-bg);
-    border: 1px solid var(--color-border);
-    border-radius: 0.75rem;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015)),
+        var(--color-card-bg);
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    border-radius: 1.45rem;
     overflow: hidden;
+    position: relative;
+    isolation: isolate;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 28px 70px -56px rgba(2, 6, 23, 0.98);
+}
+
+.troubleshoot-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+        radial-gradient(circle at top left, rgba(14, 165, 233, 0.14), transparent 40%),
+        radial-gradient(circle at bottom right, rgba(139, 92, 246, 0.12), transparent 44%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+    z-index: -1;
 }
 
 body.light-mode .troubleshoot-card {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.76)),
+        var(--color-card-bg);
 }
 
 .troubleshoot-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--color-primary);
-    box-shadow: 0 10px 30px -10px var(--color-glow);
+    transform: translateY(-2px);
+    border-color: rgba(125, 211, 252, 0.24);
+    box-shadow: 0 32px 76px -54px rgba(2, 6, 23, 0.94);
+}
+
+.troubleshoot-card:hover::before,
+.troubleshoot-card.active::before {
+    opacity: 1;
 }
 
 .troubleshoot-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 1.25rem 1.5rem;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.35rem 1.5rem;
     cursor: pointer;
     width: 100%;
     font-size: 1.125rem;
-    line-height: 1.75rem;
+    line-height: 1.7rem;
     -webkit-tap-highlight-color: transparent;
 }
 
+.troubleshoot-header > div {
+    display: flex;
+    align-items: flex-start;
+    max-width: calc(100% - 2rem);
+}
+
+.troubleshoot-header span {
+    max-width: 33rem;
+    text-align: left;
+    line-height: 1.65;
+}
+
 .troubleshoot-step-number {
-    background-color: var(--color-code-bg);
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.10), rgba(139, 92, 246, 0.12));
     color: var(--color-text-strong);
     font-weight: bold;
     width: 2.25rem;
@@ -66,14 +156,13 @@ body.light-mode .troubleshoot-card {
     font-size: 1.125rem;
     margin-right: 1rem;
     flex-shrink: 0;
-    border: 1px solid var(--color-border);
+    border: 1px solid rgba(148, 163, 184, 0.16);
     transition: all 0.3s ease-in-out;
 }
 
 .troubleshoot-icon {
     transition: transform 0.3s ease-in-out;
     flex-shrink: 0;
-    margin-left: 1rem;
     color: var(--color-text);
 }
 
@@ -89,15 +178,25 @@ body.light-mode .troubleshoot-card {
 }
 
 .troubleshoot-content p, .troubleshoot-content ul {
-    line-height: 1.75;
+    max-width: 42rem;
+    line-height: 1.88;
+    color: var(--color-text);
+    text-align: justify;
+    text-align-last: left;
+    text-justify: inter-ideograph;
+}
+
+.troubleshoot-content ul {
+    margin-top: 0.75rem;
 }
 
 .troubleshoot-card.active {
-    border-color: var(--color-primary);
+    border-color: rgba(125, 211, 252, 0.26);
+    box-shadow: 0 34px 80px -54px rgba(2, 6, 23, 0.92);
 }
 
 .troubleshoot-card.active .troubleshoot-header {
-    color: var(--color-primary);
+    color: var(--color-text-strong);
 }
 
 .troubleshoot-card.active .troubleshoot-step-number {
@@ -112,9 +211,52 @@ body.light-mode .troubleshoot-card {
 
 .troubleshoot-card.active .troubleshoot-content {
     max-height: 500px;
-    padding-top: 0;
+    padding-top: 1rem;
     padding-bottom: 1.5rem;
     padding-right: 1.5rem;
     padding-left: 5.25rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.10);
     transition: max-height 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), padding 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.troubleshoot-next-step p {
+    max-width: 38rem;
+}
+
+.troubleshoot-support-card {
+    text-align: center;
+}
+
+.troubleshoot-support-card p {
+    text-align: center;
+    text-align-last: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    .troubleshoot-header {
+        padding: 1rem 1.125rem;
+    }
+
+    .troubleshoot-header > div {
+        max-width: calc(100% - 1.5rem);
+    }
+
+    .troubleshoot-step-number {
+        margin-right: 0.75rem;
+    }
+
+    .troubleshoot-content {
+        padding: 0 1.125rem;
+    }
+
+    .troubleshoot-card.active .troubleshoot-content {
+        padding: 0.95rem 1.125rem 1.25rem 1.125rem;
+    }
+
+    .troubleshoot-summary-card p,
+    .troubleshoot-next-step p {
+        max-width: none;
+    }
 }
