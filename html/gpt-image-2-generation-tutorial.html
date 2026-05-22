@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT Image 2 生图教程：ChatGPT Images 2.0 提示词、编辑和国内使用指南｜附如何体验到 GPT-Image-2 呢？</title>
+    <meta name="description"
+          content="GPT Image 2 生图教程，面向中文用户整理 ChatGPT Images 2.0 的入口、Thinking 生图、提示词写法、图片编辑、API gpt-image-2、国内 Plus / Pro 使用和常见问题。">
+    <meta name="keywords"
+          content="GPT Image 2,GPT-Image-2,gpt-image-2,ChatGPT Images 2.0,ChatGPT生图教程,AI生图提示词,ChatGPT Plus生图,ChatGPT Pro生图">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="author" content="GPTPlus.uno 编辑组">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:title" content="GPT Image 2 生图教程：ChatGPT Images 2.0 提示词、编辑和国内使用指南｜附如何体验到 GPT-Image-2 呢？">
+    <meta property="og:description" content="从入口、提示词、编辑、多图参考、API 和国内升级注意事项，系统整理 GPT Image 2 / ChatGPT Images 2.0 的使用方法。">
+    <meta property="og:image" content="https://picx.zhimg.com/70/v2-48201d96a205839578d01ec7446b1b5b_1440w.avis?source=172ae18b&amp;biz_tag=Post">
+    <meta property="article:published_time" content="2026-05-22">
+    <meta property="article:modified_time" content="2026-05-22">
+    <meta property="article:section" content="AI 生图教程">
+    <meta property="article:tag" content="GPT Image 2">
+    <meta property="article:tag" content="ChatGPT Images 2.0">
+    <meta property="article:tag" content="ChatGPT Plus">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GPT Image 2 生图教程｜附如何体验到 GPT-Image-2 呢？">
+    <meta name="twitter:description" content="ChatGPT Images 2.0 入口、提示词、编辑、API 和国内使用指南。">
+    <meta name="twitter:image" content="https://picx.zhimg.com/70/v2-48201d96a205839578d01ec7446b1b5b_1440w.avis?source=172ae18b&amp;biz_tag=Post">
+    <link rel="canonical" href="https://www.gptplus.uno/html/gpt-image-2-generation-tutorial.html">
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../image/logo.png" type="image/png">
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://www.gptplus.uno/#organization",
+              "name": "ChatGPT Plus / Pro购买指南",
+              "url": "https://www.gptplus.uno/",
+              "areaServed": "CN",
+              "knowsAbout": [
+                "GPT Image 2 生图教程",
+                "ChatGPT Images 2.0",
+                "ChatGPT Plus 国内购买",
+                "ChatGPT Pro 升级"
+              ],
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.gptplus.uno/image/logo.png"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer support",
+                "availableLanguage": "zh-CN",
+                "description": "微信客服：YueShiwa"
+              }
+            },
+            {
+              "@type": "WebPage",
+              "@id": "https://www.gptplus.uno/html/gpt-image-2-generation-tutorial.html#webpage",
+              "url": "https://www.gptplus.uno/html/gpt-image-2-generation-tutorial.html",
+              "name": "GPT Image 2 生图教程：ChatGPT Images 2.0 提示词、编辑和国内使用指南｜附如何体验到 GPT-Image-2 呢？",
+              "isPartOf": {
+                "@type": "WebSite",
+                "name": "ChatGPT Plus / Pro购买指南",
+                "url": "https://www.gptplus.uno/"
+              },
+              "inLanguage": "zh-CN",
+              "mainEntity": {
+                "@id": "https://www.gptplus.uno/html/gpt-image-2-generation-tutorial.html#article"
+              }
+            },
+            {
+              "@type": "BlogPosting",
+              "@id": "https://www.gptplus.uno/html/gpt-image-2-generation-tutorial.html#article",
+              "mainEntityOfPage": {
+                "@id": "https://www.gptplus.uno/html/gpt-image-2-generation-tutorial.html#webpage"
+              },
+              "headline": "GPT Image 2 生图教程：ChatGPT Images 2.0 提示词、编辑和国内使用指南｜附如何体验到 GPT-Image-2 呢？",
+              "alternativeHeadline": "GPT Image 2 怎么用，国内用户如何用 ChatGPT Images 2.0 生成和编辑图片？",
+              "description": "系统整理 GPT Image 2 / ChatGPT Images 2.0 的入口、提示词写法、图片编辑、API 使用、国内 Plus / Pro 使用和常见问题。",
+              "image": {
+                "@type": "ImageObject",
+                "url": "https://picx.zhimg.com/70/v2-48201d96a205839578d01ec7446b1b5b_1440w.avis?source=172ae18b&biz_tag=Post"
+              },
+              "datePublished": "2026-05-22",
+              "dateModified": "2026-05-22",
+              "inLanguage": "zh-CN",
+              "articleSection": "AI 生图教程",
+              "isAccessibleForFree": true,
+              "author": {
+                "@id": "https://www.gptplus.uno/#organization"
+              },
+              "publisher": {
+                "@id": "https://www.gptplus.uno/#organization"
+              },
+              "about": [
+                {
+                  "@type": "Thing",
+                  "name": "GPT Image 2"
+                },
+                {
+                  "@type": "Thing",
+                  "name": "ChatGPT Images 2.0"
+                },
+                {
+                  "@type": "Thing",
+                  "name": "AI image generation"
+                }
+              ],
+              "mentions": [
+                {
+                  "@type": "Organization",
+                  "name": "OpenAI",
+                  "url": "https://openai.com/"
+                },
+                {
+                  "@type": "SoftwareApplication",
+                  "name": "ChatGPT"
+                }
+              ],
+              "citation": [
+                "https://openai.com/index/introducing-chatgpt-images-2-0/",
+                "https://help.openai.com/en/articles/6825453-chatgpt-release-notes#h_4799933861",
+                "https://help.openai.com/en/articles/11084440-chatgpt-image-libraryopenai",
+                "https://developers.openai.com/api/docs/guides/image-generation",
+                "https://gptguide.cn/pages/gpt-image-2-%E7%94%9F%E5%9B%BE-%E6%95%99%E7%A8%8B/"
+              ],
+              "keywords": "GPT Image 2, gpt-image-2, ChatGPT Images 2.0, ChatGPT 生图教程, AI 生图提示词, ChatGPT Plus 生图, 国内使用 ChatGPT"
+            },
+            {
+              "@type": "HowTo",
+              "@id": "https://www.gptplus.uno/html/gpt-image-2-generation-tutorial.html#howto",
+              "name": "GPT Image 2 怎么生成图片",
+              "description": "用 ChatGPT Images 2.0 生成图片的基础步骤。",
+              "inLanguage": "zh-CN",
+              "step": [
+                {
+                  "@type": "HowToStep",
+                  "name": "进入图片入口",
+                  "text": "在 ChatGPT 中直接描述要生成的图片，或从 Images / 创建图片入口开始。"
+                },
+                {
+                  "@type": "HowToStep",
+                  "name": "写清楚画面要求",
+                  "text": "说明主体、场景、风格、文字、比例、用途和不要出现的元素。"
+                },
+                {
+                  "@type": "HowToStep",
+                  "name": "按需使用 Thinking 或 Pro",
+                  "text": "需要更强规划、多元素一致性或复杂版式时，付费用户可选择 Thinking 或 Pro 模型触发 images with thinking。"
+                },
+                {
+                  "@type": "HowToStep",
+                  "name": "编辑和导出",
+                  "text": "不满意时上传或点开图片继续描述修改，必要时调整尺寸、比例和输出格式。"
+                }
+              ]
+            },
+            {
+              "@type": "BreadcrumbList",
+              "@id": "https://www.gptplus.uno/html/gpt-image-2-generation-tutorial.html#breadcrumb",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "首页",
+                  "item": "https://www.gptplus.uno/"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "博客",
+                  "item": "https://www.gptplus.uno/html/blog.html"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "GPT Image 2 生图教程｜附如何体验到 GPT-Image-2 呢？",
+                  "item": "https://www.gptplus.uno/html/gpt-image-2-generation-tutorial.html"
+                }
+              ]
+            },
+            {
+              "@type": "FAQPage",
+              "@id": "https://www.gptplus.uno/html/gpt-image-2-generation-tutorial.html#faq",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "GPT Image 2 是什么？",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GPT Image 2 是 OpenAI 在 ChatGPT Images 2.0 和 API 中使用的新一代图像生成模型，面向图片生成、编辑、参考图重绘和复杂版式创作。"
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "免费用户可以用 ChatGPT Images 2.0 吗？",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "OpenAI Release Notes 显示 ChatGPT Images 2.0 面向所有 ChatGPT 计划开放，但 images with thinking 需要付费计划，并在选择 Thinking 或 Pro 模型时可用。"
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "GPT Image 2 适合商用图片吗？",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "它适合制作海报、商品图、社媒图、封面和信息图草案，但商用前仍要检查品牌、人物肖像、素材来源、字体和平台政策。"
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "国内用户使用 GPT Image 2 前要注意什么？",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "先确认账号计划、图片额度、付款方式和订单升级入口。完成支付后以订单给出的升级网址为准，遇到不到账或页面异常可先走站内自助排查。"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+    </script>
+</head>
+<body class="font-sans antialiased transition-colors duration-500">
+
+<div id="root">
+    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="inline-flex items-center gap-2 font-bold text-strong text-xl leading-none">
+                <img src="../image/logo.png" alt="ChatGPT Plus / Pro购买指南 logo" width="28" height="28"
+                     class="w-7 h-7 shrink-0 inline-block align-middle">
+                <span>ChatGPT Plus / Pro <span class="text-sky-400">指南</span></span>
+            </a>
+            <div class="flex items-center">
+                <div class="hidden md:flex items-center space-x-5 lg:space-x-8 mr-6 lg:mr-8">
+                    <a href="../index.html" class="nav-link flex items-center">
+                        <i data-lucide="home" class="w-5 h-5 mr-1.5"></i> 首页
+                    </a>
+                    <a href="troubleshoot.html" class="nav-link flex items-center">
+                        <i data-lucide="wrench" class="w-5 h-5 mr-1.5"></i> 自助排查
+                    </a>
+                    <a href="faq.html" class="nav-link flex items-center">
+                        <i data-lucide="help-circle" class="w-5 h-5 mr-1.5"></i> 常见问题
+                    </a>
+                    <a href="blog.html" class="nav-link flex items-center active-link">
+                        <i data-lucide="book-open" class="w-5 h-5 mr-1.5"></i> 博客
+                    </a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="shop-more-btn" class="hidden lg:flex items-center shop-more-btn" aria-label="商城更多服务">
+                        <i data-lucide="shopping-bag" class="w-5 h-5 mr-1.5"></i>
+                        <span>商城更多服务</span>
+                    </button>
+                    <button id="theme-toggle" class="hidden md:block theme-toggle-btn" aria-label="切换主题">
+                        <i data-lucide="sun" class="w-6 h-6"></i>
+                    </button>
+                    <button id="mobile-menu-button" class="md:hidden text-strong" aria-label="打开导航菜单">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden backdrop-blur-lg">
+            <div class="px-6 pt-2 pb-4 space-y-2">
+                <a href="../index.html" class="nav-link flex items-center">
+                    <i data-lucide="home" class="w-5 h-5 mr-1.5"></i> 首页
+                </a>
+                <a href="troubleshoot.html" class="nav-link flex items-center">
+                    <i data-lucide="wrench" class="w-5 h-5 mr-1.5"></i> 自助排查
+                </a>
+                <a href="faq.html" class="nav-link flex items-center">
+                    <i data-lucide="help-circle" class="w-5 h-5 mr-1.5"></i> 常见问题
+                </a>
+                <a href="blog.html" class="nav-link flex items-center active-link">
+                    <i data-lucide="book-open" class="w-5 h-5 mr-1.5"></i> 博客
+                </a>
+                <button id="mobile-shop-more-btn" class="shop-more-btn flex items-center">
+                    <i data-lucide="shopping-bag" class="w-5 h-5 mr-1.5"></i> 商城更多服务
+                </button>
+                <div class="pt-4 mt-4 border-t border-slate-700 flex justify-center">
+                    <button id="mobile-theme-toggle" class="theme-toggle-btn" aria-label="切换主题">
+                        <i data-lucide="sun" class="w-7 h-7"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24">
+        <article class="container mx-auto px-6 py-10 animate-section">
+            <div class="max-w-5xl mx-auto">
+                <a href="blog.html" class="inline-flex items-center text-sky-400 font-semibold mb-6">
+                    <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> 返回博客
+                </a>
+
+                <div class="themed-card rounded-2xl p-6 md:p-10 mb-8">
+                    <div class="flex flex-wrap items-center gap-3 text-sm text-sky-400 mb-4">
+                        <span>2026年5月22日</span>
+                        <span>•</span>
+                        <span>AI 生图教程</span>
+                        <span>•</span>
+                        <span>10 min read</span>
+                        <span>•</span>
+                        <span>GPTPlus.uno 编辑组</span>
+                        <span>•</span>
+                        <span>最后更新：2026年5月22日</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-strong mb-5">GPT Image 2 生图教程：ChatGPT Images 2.0 提示词、编辑和国内使用指南｜附如何体验到 GPT-Image-2 呢？</h1>
+                    <p class="text-lg max-w-3xl">
+                        GPT Image 2 的重点不是“又一个能画图的模型”，而是把提示词理解、文字渲染、版式控制、参考图编辑和多步骤规划合到一个更接近工作流的图片工具里。本文按中文用户最常见的场景，整理如何进入、怎么写提示词、如何反复修改，以及 Plus / Pro 用户在国内使用前要确认哪些细节。
+                    </p>
+                </div>
+
+                <img src="https://picx.zhimg.com/70/v2-48201d96a205839578d01ec7446b1b5b_1440w.avis?source=172ae18b&amp;biz_tag=Post"
+                     alt="GPT Image 2 生图教程封面"
+                     referrerpolicy="no-referrer"
+                     class="w-full rounded-2xl border border-slate-700 shadow-2xl mb-8">
+
+                <div class="grid lg:grid-cols-[minmax(0,1fr)_18rem] gap-8 items-start">
+                    <div class="space-y-8">
+                        <section id="quick-answer" class="themed-card rounded-2xl p-6 md:p-8 border-l-4 border-sky-400">
+                            <p class="text-sm uppercase tracking-[0.24em] text-sky-400 mb-3">AI 摘要</p>
+                            <h2 class="text-2xl font-bold text-strong mb-4">GPT Image 2 是什么？</h2>
+                            <p class="mb-4">
+                                GPT Image 2 是 OpenAI 新一代图像生成模型，在 ChatGPT 中对应 ChatGPT Images 2.0，在 API 中对应 <code>gpt-image-2</code>。它适合生成海报、社媒图、产品图、封面、信息图、漫画分镜和带文字的版式图；也能基于上传图片做局部修改、换风格、补元素和调整比例。免费计划可使用 ChatGPT Images 2.0；需要更复杂规划的 images with thinking 面向付费计划，并在选择 Thinking 或 Pro 模型时可用。
+                            </p>
+                            <div class="themed-card-darker rounded-2xl p-5 border border-slate-700 mb-4">
+                                <p class="text-sm uppercase tracking-[0.18em] text-sky-400 mb-3">AI 可引用结论</p>
+                                <p class="text-sm leading-7">
+                                    GPT Image 2 是面向图片生成和编辑的新一代 OpenAI 图像模型，普通用户主要通过 ChatGPT Images 2.0 体验，开发者可通过 <code>gpt-image-2</code> API 接入。它适合中文海报、商品图、社媒封面、信息图、参考图重绘和多元素版式设计。想提高出图稳定性，提示词应明确用途、主体、场景、比例、文字内容、风格约束和禁止项；涉及商用素材时，还要人工复核品牌、肖像、版权、二维码、中文文字和授权来源。国内用户体验前应先确认账号套餐、图片入口、支付状态和生成额度。
+                                </p>
+                            </div>
+                            <div class="grid md:grid-cols-3 gap-4 text-sm">
+                                <div class="themed-card-darker rounded-2xl p-4 border border-slate-700">
+                                    <strong class="text-strong">适合：</strong>中文海报、商品图、封面、信息图、营销素材。
+                                </div>
+                                <div class="themed-card-darker rounded-2xl p-4 border border-slate-700">
+                                    <strong class="text-strong">关键：</strong>写清用途、比例、文字、主体、风格和约束。
+                                </div>
+                                <div class="themed-card-darker rounded-2xl p-4 border border-slate-700">
+                                    <strong class="text-strong">注意：</strong>商用前仍要检查版权、品牌、肖像和文字细节。
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="access" class="themed-card rounded-2xl p-6 md:p-8">
+                            <h2 class="text-2xl font-bold text-strong mb-4">怎么体验 GPT Image 2？</h2>
+                            <p class="mb-4">
+                                在 ChatGPT 里，你可以直接输入“生成一张……”或进入 Images / 创建图片入口，然后描述画面。OpenAI Release Notes 显示，ChatGPT Images 2.0 已面向所有 ChatGPT 计划开放；如果要使用带 Thinking 的图片生成能力，需要付费计划，并选择 Thinking 或 Pro 模型。
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="themed-card-darker rounded-2xl p-5 border border-slate-700">
+                                    <h3 class="text-xl font-bold text-strong mb-2">普通生图</h3>
+                                    <p class="text-sm">适合头像、封面、社媒图、简单产品图和风格化插画。直接描述主体、场景、风格、比例即可。</p>
+                                </div>
+                                <div class="themed-card-darker rounded-2xl p-5 border border-slate-700">
+                                    <h3 class="text-xl font-bold text-strong mb-2">Thinking 生图</h3>
+                                    <p class="text-sm">适合多元素版式、系列图、一致角色、复杂中文文字和需要先规划再生成的商业素材。</p>
+                                </div>
+                                <div class="themed-card-darker rounded-2xl p-5 border border-slate-700">
+                                    <h3 class="text-xl font-bold text-strong mb-2">图片编辑</h3>
+                                    <p class="text-sm">上传已有图片或点开生成图，说明要替换、删除、保留或重绘的区域，比重新生成更容易保留原图结构。</p>
+                                </div>
+                                <div class="themed-card-darker rounded-2xl p-5 border border-slate-700">
+                                    <h3 class="text-xl font-bold text-strong mb-2">开发者 API</h3>
+                                    <p class="text-sm">开发者可在 Image API 使用 <code>gpt-image-2</code>，或通过 Responses API 调用 image generation 工具，适合接入产品流程。</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="prompt" class="themed-card rounded-2xl p-6 md:p-8">
+                            <h2 class="text-2xl font-bold text-strong mb-4">GPT Image 2 提示词怎么写？</h2>
+                            <p class="mb-4">
+                                生图提示词不需要堆很多形容词，重点是把“用途”和“验收标准”写清楚。最稳的结构是：用途 + 主体 + 场景 + 风格 + 文字 + 比例尺寸 + 禁止项 + 输出要求。
+                            </p>
+                            <div class="themed-card-darker rounded-2xl p-5 border border-slate-700 mb-5">
+                                <p class="text-sm uppercase tracking-[0.18em] text-sky-400 mb-3">Prompt 模板</p>
+                                <p class="text-sm leading-7">
+                                    请生成一张用于【使用场景】的图片。主体是【人物/产品/物体】，场景为【地点/光线/背景】，风格是【摄影/海报/插画/漫画/信息图】。画面中需要出现文字【准确文字】，比例为【1:1 / 16:9 / 9:16 / 4:5】，整体感觉【专业/清爽/高级/真实】。不要出现【水印、乱码、错误文字、过度拥挤元素】。
+                                </p>
+                            </div>
+                            <div class="space-y-4">
+                                <div>
+                                    <h3 class="text-xl font-bold text-strong mb-2">中文海报示例</h3>
+                                    <p>生成一张小红书封面，主题是“ChatGPT 生图教程”，画面包含一台笔记本电脑、图片生成界面、蓝绿色科技感光效。文字只写“GPT Image 2 生图教程”和“提示词 + 编辑 + 导出”，中文必须清晰可读，比例 4:5，不要水印。</p>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-strong mb-2">产品图示例</h3>
+                                    <p>生成一张电商主图，产品是一只白色无线键盘，放在浅灰色桌面上，旁边有咖啡杯和便签。光线柔和，真实摄影风格，背景干净，适合淘宝/独立站展示，比例 1:1，不要出现多余品牌文字。</p>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-strong mb-2">信息图示例</h3>
+                                    <p>生成一张中文信息图，标题“AI 生图工作流”，分 4 步：写提示词、生成草图、局部编辑、导出复核。使用简洁扁平风格，每一步配一个图标，中文标题清楚，布局不要拥挤，比例 16:9。</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="editing" class="themed-card rounded-2xl p-6 md:p-8">
+                            <h2 class="text-2xl font-bold text-strong mb-4">如何编辑图片和使用参考图？</h2>
+                            <p class="mb-4">
+                                OpenAI 帮助中心说明，ChatGPT Images 可以创建新图，也可以编辑已有图。编辑时既可以用选择工具圈定区域，也可以直接在对话里说明修改目标。选择区域不一定完全精确，因此提示词里要写清“必须保留”和“只改哪里”。
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div class="themed-card-darker rounded-2xl p-5 border border-slate-700">
+                                    <h3 class="text-xl font-bold text-strong mb-2">局部修改</h3>
+                                    <p class="text-sm">例如“只把背景换成办公室，保留人物脸部、衣服和姿势不变”。不要只写“改好看点”。</p>
+                                </div>
+                                <div class="themed-card-darker rounded-2xl p-5 border border-slate-700">
+                                    <h3 class="text-xl font-bold text-strong mb-2">多图参考</h3>
+                                    <p class="text-sm">用一张图给产品外观，一张图给风格，一张图给场景，并明确每张图分别参考什么。</p>
+                                </div>
+                                <div class="themed-card-darker rounded-2xl p-5 border border-slate-700">
+                                    <h3 class="text-xl font-bold text-strong mb-2">比例调整</h3>
+                                    <p class="text-sm">封面常用 16:9，社媒常用 4:5 或 1:1，短视频封面常用 9:16。先定比例，后定细节。</p>
+                                </div>
+                                <div class="themed-card-darker rounded-2xl p-5 border border-slate-700">
+                                    <h3 class="text-xl font-bold text-strong mb-2">文字复核</h3>
+                                    <p class="text-sm">中文渲染已经明显改善，但标题、数字、二维码、价格和品牌名仍要逐字检查。</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="api" class="themed-card rounded-2xl p-6 md:p-8">
+                            <h2 class="text-2xl font-bold text-strong mb-4">API 使用 gpt-image-2 时要看哪些参数？</h2>
+                            <p class="mb-4">
+                                OpenAI API 文档显示，图片能力可以通过 Image API 直接生成/编辑，也可以通过 Responses API 在多轮对话中调用 image generation 工具。只做单张图，用 Image API 更直接；要做可连续修改的对话式体验，用 Responses API 更合适。
+                            </p>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-sm border-separate border-spacing-y-2">
+                                    <thead class="text-left text-sky-400">
+                                    <tr>
+                                        <th class="py-2 pr-4">参数</th>
+                                        <th class="py-2 pr-4">用途</th>
+                                        <th class="py-2">建议</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr class="themed-card-darker">
+                                        <td class="py-3 pr-4 font-semibold text-strong">size</td>
+                                        <td class="py-3 pr-4">控制分辨率和比例</td>
+                                        <td class="py-3">先用常见比例，复杂版式再提高尺寸</td>
+                                    </tr>
+                                    <tr class="themed-card-darker">
+                                        <td class="py-3 pr-4 font-semibold text-strong">quality</td>
+                                        <td class="py-3 pr-4">控制渲染质量</td>
+                                        <td class="py-3">草稿用 low，最终素材用 medium 或 high</td>
+                                    </tr>
+                                    <tr class="themed-card-darker">
+                                        <td class="py-3 pr-4 font-semibold text-strong">format</td>
+                                        <td class="py-3 pr-4">控制 PNG、JPEG、WebP 等输出</td>
+                                        <td class="py-3">追求速度可选 JPEG，保留细节可选 PNG</td>
+                                    </tr>
+                                    <tr class="themed-card-darker">
+                                        <td class="py-3 pr-4 font-semibold text-strong">prompt</td>
+                                        <td class="py-3 pr-4">描述图片目标</td>
+                                        <td class="py-3">写清用途、文字、主体、约束和不要出现的内容</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="mt-4 text-sm">
+                                成本上，API 会同时考虑输入文本、参考图输入和图片输出。带多张参考图的编辑请求可能更贵；高质量、大尺寸图片通常也会增加成本。做产品接入时，建议先用低质量草稿跑通流程，再把最终导出切到高质量。
+                            </p>
+                        </section>
+
+                        <section id="commercial" class="themed-card rounded-2xl p-6 md:p-8">
+                            <h2 class="text-2xl font-bold text-strong mb-4">GPT Image 2 适合做商业素材吗？</h2>
+                            <p class="mb-4">
+                                它很适合快速做广告草图、商品陈列、封面图、教程配图和信息图，但“能生成”不等于“可以直接商用”。真正上线前，要把法律、品牌和平台规范当成独立检查项。
+                            </p>
+                            <div class="space-y-3 text-sm">
+                                <p><strong class="text-strong">品牌：</strong>不要生成容易混淆真实品牌、商标或官方背书的素材。</p>
+                                <p><strong class="text-strong">人物：</strong>真人肖像、明星、网红和客户照片要确认授权和使用范围。</p>
+                                <p><strong class="text-strong">文字：</strong>价格、承诺、活动日期、二维码和联系方式要人工复核。</p>
+                                <p><strong class="text-strong">素材：</strong>用参考图时确认来源，避免把未授权摄影、插画、字体带入最终图。</p>
+                            </div>
+                        </section>
+
+                        <section id="domestic-use" class="themed-card rounded-2xl p-6 md:p-8">
+                            <h2 class="text-2xl font-bold text-strong mb-4">国内用户使用 GPT Image 2 前要确认什么？</h2>
+                            <p class="mb-4">
+                                如果只是偶尔生图，可以先用现有账号看入口和额度是否满足。若你经常做封面、商品图、设计草案或需要 images with thinking，Plus / Pro 会更适合稳定使用。
+                            </p>
+                            <p class="mb-4">
+                                升级前先确认账号状态、套餐需求、付款方式和订单说明。完成支付后，请以订单给出的升级网址为准；如果遇到付款后不到账、页面打不开或订阅状态异常，先按站内自助排查流程检查网络、浏览器、缓存和账号状态。
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4 mt-6">
+                                <a href="../index.html#process" class="btn btn-glow inline-flex items-center gap-2">
+                                    <i data-lucide="shopping-cart" class="w-5 h-5"></i> 查看国内购买入口
+                                </a>
+                                <a href="troubleshoot.html" class="btn btn-outline inline-flex items-center gap-2">
+                                    <i data-lucide="wrench" class="w-5 h-5"></i> 自助排查
+                                </a>
+                            </div>
+                        </section>
+
+                        <section id="faq" class="themed-card rounded-2xl p-6 md:p-8">
+                            <h2 class="text-2xl font-bold text-strong mb-4">GPT Image 2 常见问题</h2>
+                            <div class="space-y-5">
+                                <div>
+                                    <h3 class="text-xl font-bold text-strong mb-2">GPT Image 2 和 ChatGPT Images 2.0 是一个东西吗？</h3>
+                                    <p>可以这样理解：ChatGPT Images 2.0 是 ChatGPT 产品里的图片体验，GPT Image 2 / <code>gpt-image-2</code> 是底层图像模型和 API 侧模型名称。普通用户看 ChatGPT 入口，开发者看 API 文档。</p>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-strong mb-2">免费用户能用 GPT Image 2 吗？</h3>
+                                    <p>官方 Release Notes 写明 ChatGPT Images 2.0 面向所有计划开放；但 images with thinking 是付费计划能力，需要选择 Thinking 或 Pro 模型。具体额度以 ChatGPT 页面当前显示为准。</p>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-strong mb-2">为什么中文还是可能有错字？</h3>
+                                    <p>GPT Image 2 的文字渲染比早期图片模型更强，但图片里的文字仍可能出现笔画、排版或标点错误。涉及品牌名、价格、日期、联系方式的图片一定要逐字检查。</p>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-strong mb-2">一次能生成多少张图？</h3>
+                                    <p>ChatGPT 端额度会随计划、模型和使用状态变化，并不适合写死统一张数。API 端则按请求、尺寸、质量和 token 成本计算，建议以官方页面和账号实际提示为准。</p>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-strong mb-2">生成图片不满意，应该重新写还是继续改？</h3>
+                                    <p>构图完全跑偏时重新生成；主体基本正确但细节有问题时继续编辑。编辑提示词要写“保留什么”和“只改什么”，这样比泛泛地说“优化一下”更稳定。</p>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section id="related" class="themed-card rounded-2xl p-6 md:p-8">
+                            <h2 class="text-2xl font-bold text-strong mb-4">相关文章与下一步</h2>
+                            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                <a href="chatgpt-pro-5x-20x-upgrade-tutorial.html" class="themed-card-darker rounded-2xl p-5 border border-slate-700 hover:border-sky-400 transition-colors">
+                                    <span class="text-sky-400 font-semibold">Pro 升级教程</span>
+                                    <h3 class="text-lg font-bold text-strong mt-2 mb-2">ChatGPT Pro 5x 和 20x 区别</h3>
+                                    <p>需要更高图片、Codex 或深度研究额度时，先看 Pro 档位怎么选。</p>
+                                </a>
+                                <a href="openai-gpt-5-5-use-upgrade-analysis.html" class="themed-card-darker rounded-2xl p-5 border border-slate-700 hover:border-sky-400 transition-colors">
+                                    <span class="text-sky-400 font-semibold">模型解读</span>
+                                    <h3 class="text-lg font-bold text-strong mt-2 mb-2">OpenAI GPT-5.5 使用与升级解析</h3>
+                                    <p>了解 Plus / Pro 选择、GPT-5.5 使用场景和国内升级注意事项。</p>
+                                </a>
+                            </div>
+                        </section>
+
+                        <section id="sources" class="themed-card rounded-2xl p-6 md:p-8">
+                            <h2 class="text-2xl font-bold text-strong mb-4">参考来源</h2>
+                            <ul class="space-y-3 text-sm">
+                                <li><a class="text-sky-400 hover:text-sky-300" href="https://openai.com/index/introducing-chatgpt-images-2-0/" target="_blank" rel="noopener">OpenAI：Introducing ChatGPT Images 2.0</a></li>
+                                <li><a class="text-sky-400 hover:text-sky-300" href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes#h_4799933861" target="_blank" rel="noopener">OpenAI Help Center：ChatGPT Release Notes</a></li>
+                                <li><a class="text-sky-400 hover:text-sky-300" href="https://help.openai.com/en/articles/11084440-chatgpt-image-libraryopenai" target="_blank" rel="noopener">OpenAI Help Center：Images in ChatGPT</a></li>
+                                <li><a class="text-sky-400 hover:text-sky-300" href="https://developers.openai.com/api/docs/guides/image-generation" target="_blank" rel="noopener">OpenAI API Docs：Image generation</a></li>
+                                <li><a class="text-sky-400 hover:text-sky-300" href="https://gptguide.cn/pages/gpt-image-2-%E7%94%9F%E5%9B%BE-%E6%95%99%E7%A8%8B/" target="_blank" rel="noopener">GPT、Claude国内升级教程网：GPT Image 2 生图教程</a></li>
+                            </ul>
+                        </section>
+                    </div>
+
+                    <aside class="themed-card rounded-2xl p-6 lg:sticky lg:top-28">
+                        <p class="text-sm uppercase tracking-[0.24em] text-sky-400 mb-4">阅读目录</p>
+                        <ul class="space-y-3 text-sm">
+                            <li><a href="#quick-answer" class="footer-link">GPT Image 2 是什么</a></li>
+                            <li><a href="#access" class="footer-link">怎么体验</a></li>
+                            <li><a href="#prompt" class="footer-link">提示词写法</a></li>
+                            <li><a href="#editing" class="footer-link">编辑与参考图</a></li>
+                            <li><a href="#api" class="footer-link">API 参数</a></li>
+                            <li><a href="#commercial" class="footer-link">商用检查</a></li>
+                            <li><a href="#domestic-use" class="footer-link">国内使用</a></li>
+                            <li><a href="#faq" class="footer-link">常见问题</a></li>
+                            <li><a href="#related" class="footer-link">相关文章</a></li>
+                        </ul>
+                        <div class="mt-6 pt-6 border-t-themed">
+                            <p class="text-sm mb-3">需要开通 Plus / Pro 或排查升级问题，可以先看站内指南。</p>
+                            <a href="../index.html#payment-support" class="text-sky-400 text-sm font-semibold">查看购买指南 →</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="mt-20">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <h2 class="text-lg font-bold text-strong mb-4">GPT Image 2 教程</h2>
+                    <p class="text-sm">围绕 ChatGPT Images 2.0 的入口、提示词、图片编辑、API 和国内使用注意事项整理，方便按场景快速上手。</p>
+                    <div class="flex flex-wrap gap-3 mt-4 text-sky-400 text-sm">
+                        <div class="flex items-center gap-2"><i data-lucide="image" class="w-4 h-4"></i> AI 生图</div>
+                        <div class="flex items-center gap-2"><i data-lucide="book-open" class="w-4 h-4"></i> 使用指南</div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-lg font-bold text-strong mb-4">服务导航</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../index.html#payment-support" class="footer-link">支付方式与适用人群</a></li>
+                        <li><a href="../index.html#process" class="footer-link">ChatGPT Plus 购买与升级指南</a></li>
+                        <li><a href="faq.html" class="footer-link">ChatGPT Plus / Pro 常见问题</a></li>
+                        <li><a href="blog.html" class="footer-link">ChatGPT Plus / Pro 博客</a></li>
+                        <li><a href="troubleshoot.html" class="footer-link">ChatGPT Plus / Pro 自助排查</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-lg font-bold text-strong mb-4">热门主题</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li>GPT Image 2</li>
+                        <li>ChatGPT Images 2.0</li>
+                        <li>AI 生图提示词</li>
+                        <li>国内 Plus / Pro 使用</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-lg font-bold text-strong mb-4">联系我们</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li>微信：YueShiwa</li>
+                        <li>已服务数万用户</li>
+                        <li>7×24小时客服</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t-themed text-center text-sm footer-bottom flex justify-center items-center">
+                <p>© 2025 ChatGPT Plus / Pro购买指南. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<div id="shop-more-modal"
+     class="fixed inset-0 z-[100] flex items-center justify-center transition-opacity duration-300 ease-in-out opacity-0 pointer-events-none">
+    <div id="shop-modal-overlay" class="absolute inset-0 bg-black/60 backdrop-blur-sm cursor-pointer"></div>
+    <div id="shop-modal-content"
+         class="relative z-10 w-full max-w-md m-4 p-8 rounded-2xl shadow-2xl transform scale-95 transition-all duration-300 ease-in-out">
+        <button id="shop-modal-close-btn"
+                class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <div class="text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 mb-6 rounded-full bg-purple-500/10 shadow-lg shadow-purple-500/20">
+                <i data-lucide="shopping-bag" class="w-8 h-8 text-purple-400"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-strong mb-4">商城更多服务</h3>
+            <div class="shop-proxy-warning mb-6">
+                <p class="text-center font-semibold">⚠ 若打不开商城，请关闭代理后重试。</p>
+            </div>
+            <div class="mb-6">
+                <p class="text-lg mb-2">即将跳转到商城...</p>
+                <div class="flex items-center justify-center">
+                    <span id="countdown-timer" class="text-5xl font-bold gradient-text">3</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="../js/script.js"></script>
+</body>
+</html>

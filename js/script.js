@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    lucide.createIcons();
+    const refreshIcons = () => {
+        if (window.lucide && typeof window.lucide.createIcons === 'function') {
+            window.lucide.createIcons();
+        }
+    };
+
+    refreshIcons();
 
     const isNestedPage = window.location.pathname.replace(/\\/g, '/').includes('/html/');
     if (isNestedPage) {
@@ -38,20 +44,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const sections = document.querySelectorAll('.animate-section');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
-            }
+    const revealSection = (section) => {
+        section.classList.add('is-visible');
+    };
+
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    revealSection(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            rootMargin: '0px',
+            threshold: 0.1
         });
-    }, {
-        rootMargin: '0px',
-        threshold: 0.1
-    });
-    sections.forEach(section => {
-        observer.observe(section);
-    });
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    } else {
+        sections.forEach(revealSection);
+    }
+
+    window.setTimeout(() => {
+        sections.forEach(revealSection);
+    }, 1200);
 
     const bookmarkBanner = document.getElementById('bookmark-banner');
     const dismissButton = document.getElementById('bookmark-dismiss');
@@ -83,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 menuButton.innerHTML = '<i data-lucide="menu"></i>';
             }
-            lucide.createIcons();
+            refreshIcons();
         });
     }
 
@@ -106,6 +124,66 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const blogFilterButtons = document.querySelectorAll('[data-blog-filter]');
+    const blogArticles = document.querySelectorAll('[data-blog-tags]');
+    const blogEmptyState = document.getElementById('blog-empty-state');
+
+    if (blogFilterButtons.length && blogArticles.length) {
+        const activeFilterClasses = ['bg-slate-900', 'text-white', 'hover:bg-slate-800'];
+        const inactiveFilterClasses = ['bg-sky-500/10', 'text-sky-400', 'hover:bg-sky-500/20'];
+        const normalizeFilter = (value) => (value || '').trim().toLowerCase();
+        const knownFilters = Array.from(blogFilterButtons).map(button => normalizeFilter(button.dataset.blogFilter));
+
+        const setFilterButtonState = (activeFilter) => {
+            blogFilterButtons.forEach(button => {
+                const isActive = normalizeFilter(button.dataset.blogFilter) === activeFilter;
+                button.setAttribute('aria-pressed', String(isActive));
+                button.classList.remove(...activeFilterClasses, ...inactiveFilterClasses);
+                button.classList.add(...(isActive ? activeFilterClasses : inactiveFilterClasses));
+            });
+        };
+
+        const updateFilterHash = (filter) => {
+            const nextUrl = new URL(window.location.href);
+            nextUrl.hash = filter === 'all' ? '' : `category=${encodeURIComponent(filter)}`;
+            window.history.replaceState(null, '', nextUrl.toString());
+        };
+
+        const applyBlogFilter = (filter, shouldUpdateHash = true) => {
+            const activeFilter = knownFilters.includes(normalizeFilter(filter)) ? normalizeFilter(filter) : 'all';
+            let visibleCount = 0;
+
+            blogArticles.forEach(article => {
+                const articleTags = (article.dataset.blogTags || '').split('|').map(normalizeFilter);
+                const shouldShow = activeFilter === 'all' || articleTags.includes(activeFilter);
+                article.hidden = !shouldShow;
+                article.classList.toggle('hidden', !shouldShow);
+
+                if (shouldShow) visibleCount += 1;
+            });
+
+            if (blogEmptyState) {
+                blogEmptyState.classList.toggle('hidden', visibleCount > 0);
+            }
+
+            setFilterButtonState(activeFilter);
+
+            if (shouldUpdateHash) {
+                const activeButton = Array.from(blogFilterButtons).find(button => normalizeFilter(button.dataset.blogFilter) === activeFilter);
+                updateFilterHash(activeButton?.dataset.blogFilter || 'all');
+            }
+        };
+
+        const initialHashParams = new URLSearchParams(window.location.hash.replace(/^#/, ''));
+        applyBlogFilter(initialHashParams.get('category') || 'all', false);
+
+        blogFilterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                applyBlogFilter(button.dataset.blogFilter || 'all');
+            });
+        });
+    }
+
     const themeToggleBtn = document.getElementById('theme-toggle');
     const mobileThemeToggleBtn = document.getElementById('mobile-theme-toggle');
     const body = document.body;
@@ -126,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (mobileThemeToggleBtn) {
             mobileThemeToggleBtn.innerHTML = `<i data-lucide="${iconName}" class="w-7 h-7"></i>`;
         }
-        lucide.createIcons();
+        refreshIcons();
     };
 
     const toggleTheme = () => {
@@ -186,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const openModal = () => {
             rechargeModal.classList.add('is-visible');
             document.body.style.overflow = 'hidden';
-            lucide.createIcons();
+            refreshIcons();
         };
 
         const closeModal = () => {
@@ -226,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const openPurchaseModal = () => {
             purchaseNoticeModal.classList.add('is-visible');
             document.body.style.overflow = 'hidden';
-            lucide.createIcons();
+            refreshIcons();
         };
 
         const closePurchaseModal = () => {
@@ -273,7 +351,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const openShopModal = () => {
             shopMoreModal.classList.add('is-visible');
             document.body.style.overflow = 'hidden';
-            lucide.createIcons();
+            refreshIcons();
 
             // Start countdown
             let count = 3;

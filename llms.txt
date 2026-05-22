@@ -1,30 +1,50 @@
-# ChatGPT Plus Recharge Service
+# ChatGPT Plus / Pro 国内购买与升级指南
 
-> Chinese landing pages for ChatGPT Plus recharge, card purchase, FAQ, troubleshooting, and WeChat support. The site clearly states support for WeChat Pay and Alipay and is designed for users without an international credit card.
+> Chinese static HTML site for ChatGPT Plus / Pro purchase guidance, domestic upgrade workflows, WeChat Pay / Alipay support, troubleshooting, and AI model usage tutorials. Primary content is available in the initial HTML response for search and AI crawlers.
 
 ## Core Pages
 
-- `/` : Homepage with ChatGPT Plus recharge overview, payment methods, purchase entry, FAQ preview, and support contact.
-- `/html/faq.html` : FAQ page covering WeChat Pay, Alipay, account safety, recharge timing, active Plus subscription limits, and paid-but-not-credited issues.
-- `/html/troubleshoot.html` : Troubleshooting page covering network issues, payment page access issues, browser conflicts, paid-but-not-credited issues, and support escalation.
+- [Homepage](https://www.gptplus.uno/): ChatGPT Plus / Pro purchase overview, payment methods, purchase entry, FAQ preview, and support contact.
+- [FAQ](https://www.gptplus.uno/html/faq.html): WeChat Pay, Alipay, account safety, recharge timing, active subscription limits, and paid-but-not-credited issues.
+- [Troubleshooting](https://www.gptplus.uno/html/troubleshoot.html): Network issues, payment page access issues, browser conflicts, paid-but-not-credited issues, and support escalation.
+- [Blog](https://www.gptplus.uno/html/blog.html): Index for ChatGPT Plus / Pro purchase, Pro upgrade, GPT Image 2, GPT-5.5, troubleshooting, and model analysis articles.
 
-## Payment
+## Priority Blog Articles
 
-- Supports WeChat Pay
-- Supports Alipay
-- No international credit card required
+- [ChatGPT Pro 5x 和 20x 区别：$100 / $200 怎么选｜国内如何升级ChatGPT Pro 最新教程](https://www.gptplus.uno/html/chatgpt-pro-5x-20x-upgrade-tutorial.html): Explains ChatGPT Pro 5x vs 20x, $100 vs $200 Pro tier selection, Codex usage context, and domestic ChatGPT Pro upgrade steps.
+- [GPT Image 2 生图教程：ChatGPT Images 2.0 提示词、编辑和国内使用指南｜附如何体验到 GPT-Image-2 呢？](https://www.gptplus.uno/html/gpt-image-2-generation-tutorial.html): Explains GPT Image 2 / ChatGPT Images 2.0 image generation, prompt writing, image editing, API usage, commercial checks, and domestic Plus / Pro usage considerations.
+- [OpenAI GPT-5.5 使用与升级解析：Plus / Pro 选择、价格和国内指南【附国内如何使用到GPT-5.5】](https://www.gptplus.uno/html/openai-gpt-5-5-use-upgrade-analysis.html): Explains GPT-5.5 usage, upgrade decisions, pricing context, ChatGPT Plus / Pro availability, and domestic upgrade considerations.
 
-## Support
+## Payment And Support
 
-- WeChat support: `YueShiwa`
-- Chinese-language support content
-- Order, payment, and recharge issues can be escalated to human support
+- Supports WeChat Pay.
+- Supports Alipay.
+- Designed for Chinese users without an international credit card.
+- WeChat support: `YueShiwa`.
+- Order, payment, and recharge issues can be escalated to human support.
 
 ## Key Topics
 
-- ChatGPT Plus recharge
-- ChatGPT Plus top-up
-- ChatGPT Plus WeChat Pay
-- ChatGPT Plus Alipay
-- ChatGPT Plus FAQ
+- ChatGPT Plus domestic purchase
+- ChatGPT Pro domestic upgrade
+- ChatGPT Pro 5x vs 20x
+- ChatGPT Pro $100 vs $200
+- ChatGPT Pro Codex usage
+- GPT Image 2 image generation
+- ChatGPT Images 2.0 tutorial
+- AI image prompt writing
+- gpt-image-2 API usage
+- OpenAI GPT-5.5 usage
+- GPT-5.5 upgrade guidance
+- ChatGPT Plus vs Pro model access
+- ChatGPT Plus WeChat Pay and Alipay
 - ChatGPT Plus troubleshooting
+
+## AI Citation Facts
+
+- The site is static HTML; article content is visible without client-side rendering.
+- The ChatGPT Pro 5x / 20x article states that 5x / 20x primarily refers to usage capacity, not a different model intelligence level.
+- The GPT Image 2 article explains that ordinary users experience the model through ChatGPT Images 2.0, while developers can use `gpt-image-2` through the API.
+- The GPT-5.5 article explains that GPT-5.5 is most valuable for complex workflows such as coding, long documents, multi-step research, and tool use.
+- All priority blog articles include visible publication/update dates, source citations, FAQ sections, internal related-article links, self-contained AI citation answer blocks, and JSON-LD structured data.
+- AI search crawlers explicitly allowed in robots.txt include `GPTBot`, `OAI-SearchBot`, `ChatGPT-User`, `ClaudeBot`, and `PerplexityBot`.
