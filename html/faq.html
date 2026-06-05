@@ -20,7 +20,7 @@
     <meta name="twitter:description" content="微信支付、支付宝、Plus / Pro 选择、Plus 一年购买与到账排查说明。">
     <link rel="canonical" href="https://www.gptplus.uno/html/faq.html">
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css?v=20260605a">
     <link rel="stylesheet" href="../css/faq.css">
     <link rel="icon" href="../image/logo.png" type="image/png">
     <script type="application/ld+json">
@@ -138,10 +138,16 @@
                         <i data-lucide="shopping-bag" class="w-5 h-5 mr-1.5"></i>
                         <span>商城更多服务</span>
                     </button>
-                    <button id="theme-toggle" class="hidden md:block theme-toggle-btn" aria-label="切换主题">
+                    <a href="../en/index.html" class="language-toggle-btn icon-control" aria-label="切换到英文"
+                       title="Switch to English">
+                        <i data-lucide="languages" class="w-5 h-5"></i>
+                    </a>
+                    <button id="theme-toggle" class="hidden md:block theme-toggle-btn icon-control" aria-label="切换主题"
+                            title="切换明暗主题">
                         <i data-lucide="sun" class="w-6 h-6"></i>
                     </button>
-                    <button id="mobile-menu-button" class="md:hidden text-strong" aria-label="打开导航菜单">
+                    <button id="mobile-menu-button" class="md:hidden text-strong icon-control" aria-label="打开导航菜单"
+                            title="打开导航菜单">
                         <i data-lucide="menu"></i>
                     </button>
                 </div>
@@ -444,7 +450,7 @@
 </div>
 
 <script src="https://unpkg.com/lucide@latest"></script>
-<script src="../js/script.js"></script>
+<script src="../js/script.js?v=20260605a"></script>
 <script src="../js/faq.js"></script>
 </body>
 </html>

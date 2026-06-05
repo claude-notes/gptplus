@@ -92,16 +92,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     if (menuButton && mobileMenu) {
-        const menuIcon = menuButton.querySelector('i');
+        const isEnglishPage = document.documentElement.lang.toLowerCase().startsWith('en');
+        const menuLabels = isEnglishPage
+            ? { open: 'Open navigation menu', close: 'Close navigation menu' }
+            : { open: '打开导航菜单', close: '关闭导航菜单' };
+
+        const setMenuButton = (isMenuOpen) => {
+            menuButton.setAttribute('aria-expanded', String(isMenuOpen));
+            menuButton.setAttribute('aria-label', isMenuOpen ? menuLabels.close : menuLabels.open);
+            menuButton.setAttribute('title', isMenuOpen ? menuLabels.close : menuLabels.open);
+            menuButton.innerHTML = `<i data-lucide="${isMenuOpen ? 'x' : 'menu'}"></i>`;
+            refreshIcons();
+        };
+
+        const closeMobileMenu = () => {
+            mobileMenu.classList.add('hidden');
+            menuButton.setAttribute('aria-expanded', 'false');
+            setMenuButton(false);
+        };
+
+        menuButton.setAttribute('aria-expanded', 'false');
         menuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
             const isMenuOpen = !mobileMenu.classList.contains('hidden');
-            if (isMenuOpen) {
-                menuButton.innerHTML = '<i data-lucide="x"></i>';
-            } else {
-                menuButton.innerHTML = '<i data-lucide="menu"></i>';
-            }
-            refreshIcons();
+            menuButton.setAttribute('aria-expanded', String(isMenuOpen));
+            setMenuButton(isMenuOpen);
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
         });
     }
 

@@ -89,8 +89,58 @@ section[id] {
 
 .nav-link:hover::after { width: 100%; }
 
-.theme-toggle-btn { color: var(--color-text); }
-.theme-toggle-btn:hover { color: var(--color-text-strong); }
+.theme-toggle-btn,
+.language-toggle-btn { color: var(--color-text); }
+
+.theme-toggle-btn:hover,
+.language-toggle-btn:hover { color: var(--color-text-strong); }
+
+.icon-control {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: grid;
+    place-items: center;
+    flex: 0 0 2.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.icon-control:hover {
+    background: rgba(148, 163, 184, 0.1);
+    border-color: rgba(148, 163, 184, 0.18);
+}
+
+.icon-control:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+.language-toggle-btn::before {
+    content: "\1F310";
+    font-size: 1.15rem;
+    line-height: 1;
+}
+
+#theme-toggle::before {
+    content: "\25D0";
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+#mobile-menu-button::before {
+    content: "\2630";
+    font-size: 1.35rem;
+    line-height: 1;
+}
+
+#mobile-menu-button[aria-expanded="true"]::before {
+    content: "\00D7";
+}
+
+.icon-control:has(svg)::before {
+    display: none;
+}
 
 .btn {
     padding: 0.75rem 1.5rem;
@@ -654,7 +704,7 @@ body {
     position: relative;
     min-height: 100vh;
     line-height: 1.72;
-    letter-spacing: 0.01em;
+    letter-spacing: 0;
     text-rendering: optimizeLegibility;
     background:
         radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.14), transparent 28%),
@@ -737,7 +787,7 @@ body.light-mode #mobile-menu {
 
 .nav-link {
     font-weight: 500;
-    letter-spacing: 0.02em;
+    letter-spacing: 0;
 }
 
 .nav-link::after {
@@ -755,7 +805,7 @@ body.light-mode #mobile-menu {
     padding: 0.9rem 1.55rem;
     border: 1px solid transparent;
     backdrop-filter: blur(12px);
-    letter-spacing: 0.01em;
+    letter-spacing: 0;
 }
 
 .btn-glow {
@@ -858,7 +908,7 @@ main h4,
 #purchase-modal-content h3,
 #shop-modal-content h3 {
     text-wrap: balance;
-    letter-spacing: -0.03em;
+    letter-spacing: 0;
 }
 
 main p,
@@ -983,7 +1033,7 @@ main > section .text-center.mb-12 > h2,
     text-wrap: nowrap;
     word-break: keep-all;
     line-height: 1.08;
-    letter-spacing: -0.03em;
+    letter-spacing: 0;
     font-size: clamp(1.1rem, 4.9vw, 2.45rem);
 }
 
@@ -1456,5 +1506,283 @@ body.light-mode .modal-option-btn.backup-site-btn:hover {
     footer .container > .grid > div {
         padding-top: 0;
         border-top: 0;
+    }
+}
+
+/* Mobile readability and header controls */
+@media (max-width: 768px) {
+    header nav {
+        min-height: 4rem;
+        padding: 0.65rem 1rem !important;
+        gap: 0.5rem;
+    }
+
+    header nav > a {
+        min-width: 0;
+        flex: 1 1 auto;
+        gap: 0.5rem;
+        overflow: hidden;
+    }
+
+    header nav > a > img {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    header nav > a > span {
+        min-width: 0;
+        overflow: hidden;
+        font-size: 0;
+        white-space: nowrap;
+    }
+
+    header nav > a > span::after {
+        content: "GPT Plus";
+        font-size: 1rem;
+        line-height: 1;
+        color: var(--color-text-strong);
+    }
+
+    header nav > div,
+    header nav > div > .flex {
+        flex: 0 0 auto;
+    }
+
+    header nav .space-x-4 {
+        gap: 0.2rem;
+    }
+
+    header nav .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+        margin-left: 0 !important;
+    }
+
+    #theme-toggle,
+    #mobile-menu-button,
+    .language-toggle-btn {
+        display: grid !important;
+    }
+
+    #mobile-menu .pt-4.mt-4.border-t {
+        display: none;
+    }
+
+    #mobile-menu > div {
+        padding: 0.8rem 1rem 1rem;
+    }
+
+    #mobile-menu .nav-link,
+    #mobile-menu .shop-more-btn {
+        width: 100%;
+        min-height: 2.75rem;
+        padding: 0.55rem 0.25rem;
+    }
+
+    main {
+        padding-top: 4rem !important;
+    }
+
+    main > section.container,
+    main > article.container,
+    footer .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    main > section,
+    main > article {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+
+    main > section:first-of-type {
+        padding-top: 1.25rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    main > section:first-of-type::before {
+        inset: 0 0.5rem;
+        border-radius: 1rem;
+    }
+
+    main > section:first-of-type .inline-block {
+        max-width: 100%;
+        padding: 0.45rem 0.75rem;
+        border-radius: 0.5rem;
+        color: #bae6fd;
+        font-size: 0.75rem;
+        line-height: 1.55;
+        white-space: normal;
+    }
+
+    body.light-mode main > section:first-of-type .inline-block {
+        color: #075985;
+        background: rgba(14, 165, 233, 0.12);
+    }
+
+    main h1,
+    main h2,
+    main h3,
+    main h4,
+    main > section:first-of-type h1 .gradient-text,
+    main > section > .themed-card > h2.text-3xl,
+    main > section > .text-center > h2,
+    main > section > .text-center > h3,
+    main > section .text-center.mb-10 > h2,
+    main > section .text-center.mb-12 > h2,
+    #support h2.text-3xl {
+        max-width: 100%;
+        white-space: normal;
+        text-wrap: balance;
+        word-break: normal;
+        overflow-wrap: anywhere;
+        letter-spacing: 0;
+    }
+
+    main > section:first-of-type h1 {
+        font-size: clamp(2rem, 10vw, 2.8rem);
+        line-height: 1.12;
+    }
+
+    main > section:first-of-type h1 .gradient-text {
+        width: auto;
+        font-size: clamp(2rem, 10vw, 2.8rem);
+        line-height: 1.14;
+    }
+
+    main > article h1 {
+        font-size: clamp(1.85rem, 8.5vw, 2.1rem) !important;
+        line-height: 1.22 !important;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    main > section > .themed-card > h2.text-3xl,
+    main > section > .text-center > h2,
+    main > section > .text-center > h3,
+    main > section .text-center.mb-10 > h2,
+    main > section .text-center.mb-12 > h2,
+    #support h2.text-3xl {
+        font-size: clamp(1.35rem, 6vw, 1.75rem);
+        line-height: 1.28;
+    }
+
+    main p,
+    main li,
+    footer p,
+    footer li,
+    .notice-box p,
+    .proxy-warning p,
+    .shop-proxy-warning p {
+        text-align: left;
+        text-align-last: left;
+        line-height: 1.75;
+    }
+
+    main > section:first-of-type .text-lg {
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+        line-height: 1.8;
+        text-align: left;
+        text-align-last: left;
+    }
+
+    main > section:first-of-type .text-lg br {
+        display: none;
+    }
+
+    main > section:first-of-type .flex.flex-col.sm\:flex-row {
+        width: 100%;
+        gap: 0.75rem;
+    }
+
+    main > section:first-of-type .flex.flex-col.sm\:flex-row .btn {
+        width: min(100%, 19rem);
+        justify-content: center;
+    }
+
+    main > section:first-of-type .mt-10.grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+        margin-top: 2rem;
+    }
+
+    main > section:first-of-type .mt-10.grid > .themed-card {
+        padding: 1rem !important;
+        border-radius: 0.75rem !important;
+    }
+
+    main > section:first-of-type .mt-10.grid h2 {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    main > section:first-of-type .mt-10.grid p {
+        font-size: 0.8125rem;
+        line-height: 1.65;
+    }
+
+    main > section:first-of-type .mt-10.grid p:first-child {
+        margin-bottom: 0.4rem;
+        font-size: 0.7rem;
+        letter-spacing: 0 !important;
+    }
+
+    .info-card,
+    .step-box,
+    .guide-card,
+    .themed-card,
+    .themed-card-darker {
+        padding: 1rem !important;
+        border-radius: 0.75rem;
+    }
+
+    .step-box > .flex.items-center {
+        gap: 0.65rem;
+    }
+
+    .step-number {
+        width: 2.25rem;
+        height: 2.25rem;
+        flex: 0 0 2.25rem;
+        font-size: 1rem;
+    }
+
+    .overflow-x-auto {
+        margin-left: -0.25rem;
+        margin-right: -0.25rem;
+        padding: 0 0.25rem 0.5rem;
+        overscroll-behavior-inline: contain;
+    }
+
+    .overflow-x-auto table {
+        min-width: 38rem;
+    }
+
+    #support .themed-card {
+        border-radius: 0.75rem;
+    }
+
+    #support h2.text-3xl {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #toast-popup {
+        left: 0.75rem;
+        right: 0.75rem;
+        bottom: 0.75rem;
+        max-width: none;
+    }
+}
+
+@media (max-width: 359px) {
+    .icon-control {
+        width: 2.25rem;
+        height: 2.25rem;
+        flex-basis: 2.25rem;
+    }
+
+    main > section:first-of-type .mt-10.grid {
+        grid-template-columns: 1fr;
     }
 }

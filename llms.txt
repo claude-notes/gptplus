@@ -5,6 +5,7 @@
 ## Core Pages
 
 - [Homepage](https://www.gptplus.uno/): ChatGPT Plus / Pro purchase overview, payment methods, purchase entry, FAQ preview, and support contact.
+- [English Homepage](https://www.gptplus.uno/en/): English-language ChatGPT Plus / Pro plan comparison, China-friendly payment guidance, purchase process, FAQ, and support information.
 - [FAQ](https://www.gptplus.uno/html/faq.html): WeChat Pay, Alipay, account safety, recharge timing, active subscription limits, and paid-but-not-credited issues.
 - [Troubleshooting](https://www.gptplus.uno/html/troubleshoot.html): Network issues, payment page access issues, browser conflicts, paid-but-not-credited issues, and support escalation.
 - [Blog](https://www.gptplus.uno/html/blog.html): Index for ChatGPT Plus / Pro purchase, Pro upgrade, GPT Image 2, GPT-5.5, troubleshooting, and model analysis articles.
