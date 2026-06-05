@@ -44,6 +44,16 @@ for (const relativePath of htmlFiles) {
 const chineseHome = await read('index.html');
 assert.match(
   chineseHome,
+  /<img src="image\/wechat-qr\.png" alt="ChatGPT Plus \/ Pro 客服微信二维码"/,
+  'Homepage should load the customer-service QR code from the local image directory',
+);
+assert.doesNotMatch(
+  chineseHome,
+  /gptguide\.cn\/img\/yueshi_wechat\.png/,
+  'Homepage should not depend on the previous remote QR-code host',
+);
+assert.match(
+  chineseHome,
   new RegExp(
     `<link rel="alternate" hreflang="zh-Hans" href="${productionOrigin}/">`,
   ),
