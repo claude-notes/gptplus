@@ -160,6 +160,7 @@ const codexFiles = [
   'codex/style.css',
   'codex/script.js',
   'codex/wechat-qr.jpg',
+  'codex/favicon.png',
 ];
 
 for (const relativePath of codexFiles) {
@@ -198,6 +199,7 @@ assert.match(codexHome, /¥4999/);
 assert.doesNotMatch(codexHome, /(?:href|src)="https?:\/\/qimuai\.cn/i);
 assert.match(codexHome, /href="style\.css"/);
 assert.match(codexHome, /src="script\.js"/);
+assert.match(codexHome, /<link rel="icon" href="favicon\.png" type="image\/png">/);
 assert.doesNotMatch(codexHome, /[—–]/);
 
 const codexScript = await read('codex/script.js');
@@ -205,5 +207,10 @@ assert.match(codexScript, /aria-expanded/);
 assert.match(codexScript, /classList\.add\('is-open'\)/);
 assert.match(codexScript, /event\.key === 'Escape'/);
 assert.match(codexScript, /lastTrigger\.focus\(\)/);
+assert.match(
+  codexScript,
+  /window\.setTimeout\(\(\) => \{[\s\S]*?revealItems\.forEach\(\(item\) => item\.classList\.add\('is-visible'\)\)[\s\S]*?\}, 1200\)/,
+  'Codex page should reveal all content after the scroll-animation fallback timeout',
+);
 
 console.log(`Validated ${htmlFiles.length + 2} HTML pages and international SEO metadata.`);

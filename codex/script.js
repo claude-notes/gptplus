@@ -88,4 +88,8 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         revealItems.forEach((item) => item.classList.add('is-visible'));
     }
+
+    window.setTimeout(() => {
+        revealItems.forEach((item) => item.classList.add('is-visible'));
+    }, 1200);
 });
