@@ -155,4 +155,55 @@ assert.match(
   new RegExp(`\\[English Homepage\\]\\(${productionOrigin}/en/\\)`),
 );
 
-console.log(`Validated ${htmlFiles.length + 1} HTML pages and international SEO metadata.`);
+const codexFiles = [
+  'codex/index.html',
+  'codex/style.css',
+  'codex/script.js',
+  'codex/wechat-qr.jpg',
+];
+
+for (const relativePath of codexFiles) {
+  await assert.doesNotReject(
+    access(path.join(root, relativePath)),
+    `Codex page asset should exist: ${relativePath}`,
+  );
+}
+
+const codexHome = await read('codex/index.html');
+assert.match(codexHome, /<html lang="zh-CN">/);
+assert.match(
+  codexHome,
+  /<link rel="canonical" href="https:\/\/www\.gptplus\.uno\/codex\/">/,
+);
+assert.match(codexHome, /href="#market"/);
+assert.match(codexHome, /href="#service"/);
+assert.match(codexHome, /href="#pricing"/);
+assert.match(codexHome, /href="#faq"/);
+assert.match(
+  codexHome,
+  /class="[^\"]*qr-trigger[^\"]*"[^>]*>\s*GPT Plus/,
+);
+assert.match(codexHome, /id="wechat-float"/);
+assert.match(codexHome, /id="qr-modal"/);
+assert.match(codexHome, /id="contact"/);
+assert.match(codexHome, /src="wechat-qr\.jpg"/);
+assert.match(codexHome, /基础安装包/);
+assert.match(codexHome, /¥599/);
+assert.match(codexHome, /标准跑通包/);
+assert.match(codexHome, /¥999/);
+assert.match(codexHome, /进阶工作流包/);
+assert.match(codexHome, /¥1999/);
+assert.match(codexHome, /团队小班包/);
+assert.match(codexHome, /¥4999/);
+assert.doesNotMatch(codexHome, /(?:href|src)="https?:\/\/qimuai\.cn/i);
+assert.match(codexHome, /href="style\.css"/);
+assert.match(codexHome, /src="script\.js"/);
+assert.doesNotMatch(codexHome, /[—–]/);
+
+const codexScript = await read('codex/script.js');
+assert.match(codexScript, /aria-expanded/);
+assert.match(codexScript, /classList\.add\('is-open'\)/);
+assert.match(codexScript, /event\.key === 'Escape'/);
+assert.match(codexScript, /lastTrigger\.focus\(\)/);
+
+console.log(`Validated ${htmlFiles.length + 2} HTML pages and international SEO metadata.`);
