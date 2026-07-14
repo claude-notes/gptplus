@@ -109,7 +109,11 @@ ul {
 }
 
 .rail-title {
-    margin-block: auto;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    margin: 0;
+    padding-block: 24px;
     color: var(--muted);
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     font-size: 10px;
@@ -1013,6 +1017,12 @@ ul {
 .motion-ready [data-reveal].is-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+.motion-ready .hero [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
 }
 
 @media (max-width: 1040px) {
