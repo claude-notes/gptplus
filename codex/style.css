@@ -558,6 +558,103 @@ ul {
     color: var(--muted);
 }
 
+.platform-guide {
+    margin-top: 64px;
+}
+
+.platform-guide__heading {
+    max-width: 780px;
+    margin-bottom: 28px;
+}
+
+.platform-guide__heading h3 {
+    margin-bottom: 12px;
+    font-size: clamp(26px, 3vw, 36px);
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+}
+
+.platform-guide__heading p {
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.platform-matrix {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 2px solid var(--ink);
+    table-layout: fixed;
+}
+
+.platform-matrix caption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.platform-matrix th,
+.platform-matrix td {
+    padding: 20px 22px;
+    border-bottom: 1px solid var(--ink);
+    text-align: left;
+    vertical-align: top;
+}
+
+.platform-matrix thead th {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 780;
+    letter-spacing: 0.1em;
+}
+
+.platform-matrix thead th:first-child,
+.platform-matrix tbody th {
+    width: 19%;
+}
+
+.platform-matrix thead th:nth-child(2) {
+    width: 39%;
+}
+
+.platform-matrix tbody th {
+    color: var(--cobalt);
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.platform-matrix td {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.service-disclosure {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 24px;
+    margin-top: 28px;
+    padding: 22px 24px;
+    border-left: 4px solid var(--cobalt);
+    background: rgb(36 71 215 / 0.055);
+}
+
+.service-disclosure strong {
+    color: var(--cobalt);
+    font-size: 13px;
+}
+
+.service-disclosure p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.75;
+}
+
 .market-lead {
     display: grid;
     min-height: 310px;
@@ -1466,6 +1563,65 @@ ul {
 
     .qr-modal__copy {
         padding-inline: 26px;
+    }
+}
+
+@media (max-width: 720px) {
+    .platform-guide {
+        margin-top: 48px;
+    }
+
+    .platform-matrix,
+    .platform-matrix tbody,
+    .platform-matrix tr,
+    .platform-matrix th,
+    .platform-matrix td {
+        display: block;
+        width: 100%;
+    }
+
+    .platform-matrix thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        white-space: nowrap;
+    }
+
+    .platform-matrix tbody th {
+        width: 100%;
+        padding: 20px 18px 10px;
+        border-bottom: 0;
+        font-size: 18px;
+    }
+
+    .platform-matrix td {
+        display: grid;
+        grid-template-columns: 86px minmax(0, 1fr);
+        gap: 12px;
+        padding: 8px 18px;
+        border-bottom: 0;
+    }
+
+    .platform-matrix td:last-child {
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--ink);
+    }
+
+    .platform-matrix td::before {
+        content: attr(data-label);
+        color: var(--ink);
+        font-size: 11px;
+        font-weight: 780;
+        letter-spacing: 0.08em;
+    }
+
+    .service-disclosure {
+        grid-template-columns: 1fr;
+        gap: 9px;
+        padding: 20px;
     }
 }
 

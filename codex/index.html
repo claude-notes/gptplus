@@ -26,13 +26,48 @@
           "name": "Codex安装教程与远程安装服务",
           "description": "面向零基础中文用户的 Codex 安装教程与一对一远程安装服务，覆盖 Windows、macOS、手机远程配置、账号检查和首次任务跑通。",
           "inLanguage": "zh-CN",
+          "datePublished": "2026-07-14",
           "dateModified": "2026-07-14",
+          "about": {
+            "@id": "https://www.gptplus.uno/codex/#codex-software"
+          },
+          "citation": [
+            {
+              "@type": "WebPage",
+              "name": "Get started with Codex",
+              "url": "https://openai.com/codex/get-started/"
+            },
+            {
+              "@type": "WebPage",
+              "name": "Moving to the new ChatGPT desktop app",
+              "url": "https://help.openai.com/en/articles/20001276-moving-to-the-new-chatgpt-desktop-app"
+            },
+            {
+              "@type": "WebPage",
+              "name": "移动版 Codex",
+              "url": "https://chatgpt.com/zh-Hans-CN/codex/mobile/"
+            },
+            {
+              "@type": "WebPage",
+              "name": "Using Codex with your ChatGPT plan",
+              "url": "https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan"
+            }
+          ],
           "breadcrumb": {
             "@id": "https://www.gptplus.uno/codex/#breadcrumb"
           },
           "mainEntity": {
             "@id": "https://www.gptplus.uno/codex/#service"
           }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://www.gptplus.uno/codex/#codex-software",
+          "name": "OpenAI Codex",
+          "applicationCategory": "DeveloperApplication",
+          "description": "OpenAI 的智能编程代理，可帮助用户编写、审查和交付代码。",
+          "url": "https://openai.com/codex/get-started/",
+          "sameAs": "https://openai.com/codex/get-started/"
         },
         {
           "@type": "BreadcrumbList",
@@ -58,11 +93,12 @@
           "name": "Codex 安装交付服务",
           "serviceType": "Codex 远程安装与首次任务交付",
           "url": "https://www.gptplus.uno/codex/",
-          "description": "为零基础中文用户提供 Codex 设备检查、桌面安装、手机远程配置、账号登录、首次任务验收和售后答疑。",
+          "description": "本站作为独立第三方，为零基础中文用户提供 Codex 设备检查、桌面安装、手机远程配置、账号登录、首次任务验收和售后答疑。",
           "provider": {
             "@type": "Organization",
             "name": "ChatGPT Plus / Pro 购买指南",
-            "url": "https://www.gptplus.uno/"
+            "url": "https://www.gptplus.uno/",
+            "description": "独立第三方 ChatGPT 升级与 Codex 安装服务网站，与 OpenAI 无隶属或官方合作关系。"
           },
           "areaServed": {
             "@type": "Country",
@@ -249,6 +285,7 @@
                     <p class="guide-answer">Codex 是 OpenAI 的智能编程代理。Windows 和 macOS 用户可在 ChatGPT 桌面应用中使用 Codex；手机端主要用于远程查看、批准和继续受支持的桌面任务。安装前需要确认设备、ChatGPT 账号和项目文件夹权限。</p>
                     <p class="guide-updated">
                         信息核对：2026年7月14日 | 以 OpenAI 官方说明为准：
+                        <a href="https://openai.com/codex/get-started/" target="_blank" rel="noopener noreferrer">Codex 入门步骤</a>
                         <a href="https://help.openai.com/en/articles/20001276-moving-to-the-new-chatgpt-desktop-app" target="_blank" rel="noopener noreferrer">Windows 与 macOS 桌面端</a>
                         <a href="https://chatgpt.com/zh-Hans-CN/codex/mobile/" target="_blank" rel="noopener noreferrer">Codex 手机远程使用</a>
                         <a href="https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan" target="_blank" rel="noopener noreferrer">ChatGPT 计划与 Codex</a>
@@ -272,6 +309,44 @@
                         <div><h3>跑通任务与手机远程</h3><p>先完成一次真实任务，再按设备支持情况配置手机端远程查看和批准操作。</p></div>
                     </li>
                 </ol>
+
+                <section class="platform-guide" aria-labelledby="platform-guide-title" data-reveal>
+                    <header class="platform-guide__heading">
+                        <h3 id="platform-guide-title">Windows、macOS 和手机怎么用 Codex</h3>
+                        <p>电脑端负责连接项目并执行任务，手机端主要用于远程发起、查看、批准和继续受支持的 Codex 任务。</p>
+                    </header>
+                    <table class="platform-matrix">
+                        <caption>零基础用户使用 Codex 的设备方式和准备内容</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">设备</th>
+                                <th scope="col">使用方式</th>
+                                <th scope="col">小白需要准备</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Windows</th>
+                                <td data-label="使用方式">安装当前版本的 ChatGPT 桌面应用，登录后进入 Codex，选择并授权项目文件夹。</td>
+                                <td data-label="需要准备">Windows 电脑、ChatGPT 账号、可用的项目或演示文件夹。</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">macOS</th>
+                                <td data-label="使用方式">安装当前版本的 ChatGPT 桌面应用，登录后进入 Codex，选择并授权项目文件夹。</td>
+                                <td data-label="需要准备">Mac 电脑、ChatGPT 账号、可用的项目或演示文件夹。</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">iPhone 与安卓手机</th>
+                                <td data-label="使用方式">通过 ChatGPT 移动应用远程发起、查看、批准和继续受支持的桌面 Codex 任务。</td>
+                                <td data-label="需要准备">ChatGPT 移动应用、同一账号与受支持的已连接电脑，不等同于手机本地独立运行桌面 Codex。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <aside class="service-disclosure" aria-label="第三方服务说明">
+                        <strong>服务身份说明</strong>
+                        <p>本站提供独立的第三方远程安装与使用指导，与 OpenAI 无隶属或官方合作关系。Codex 产品功能、ChatGPT 计划权益和系统要求以 OpenAI 官方说明为准。</p>
+                    </aside>
+                </section>
             </div>
         </section>
 
@@ -528,7 +603,7 @@
                 </div>
                 <div class="contact-qr">
                     <div class="contact-qr__frame">
-                        <img src="wechat-qr.jpg" alt="Codex 安装交付服务微信二维码" width="1056" height="1441">
+                        <img src="wechat-qr.jpg" alt="Codex 安装交付服务微信二维码" width="1056" height="1441" loading="lazy" decoding="async">
                     </div>
                     <strong>扫码添加微信</strong>
                     <span>发送设备环境和 Codex 使用需求</span>
@@ -566,7 +641,7 @@
         </div>
         <div class="qr-modal__image">
             <div class="qr-modal__image-frame">
-                <img src="wechat-qr.jpg" alt="Codex 安装交付服务微信二维码" width="1056" height="1441">
+                <img src="wechat-qr.jpg" alt="Codex 安装交付服务微信二维码" width="1056" height="1441" loading="lazy" decoding="async">
             </div>
             <p class="qr-modal__caption"><strong>微信扫一扫</strong><span>添加后备注“Codex”</span></p>
         </div>
