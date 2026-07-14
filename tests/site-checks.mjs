@@ -191,6 +191,10 @@ assert.match(
   /<link rel="canonical" href="https:\/\/www\.gptplus\.uno\/codex\/">/,
 );
 assert.match(codexHome, /href="#market"/);
+assert.match(
+  codexHome,
+  /<div class="site-menu" id="site-menu">\s*<a href="\.\.\/">GPT一键升级<\/a>\s*<a href="#market">/,
+);
 assert.match(codexHome, /href="#service"/);
 assert.match(codexHome, /href="#pricing"/);
 assert.match(codexHome, /href="#faq"/);
