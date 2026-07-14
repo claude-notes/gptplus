@@ -548,17 +548,27 @@
     <span>微信咨询</span>
 </a>
 
-<div class="qr-modal" id="qr-modal" role="dialog" aria-modal="true" aria-labelledby="qr-modal-title" hidden>
+<div class="qr-modal" id="qr-modal" role="dialog" aria-modal="true" aria-labelledby="qr-modal-title" aria-describedby="qr-modal-description" hidden>
     <div class="qr-modal__backdrop" data-modal-close></div>
     <div class="qr-modal__panel">
-        <button class="qr-modal__close" type="button" data-modal-close aria-label="关闭二维码弹窗">关闭</button>
+        <button class="qr-modal__close" type="button" data-modal-close aria-label="关闭二维码弹窗">
+            <span aria-hidden="true">×</span>
+        </button>
         <div class="qr-modal__copy">
             <p>微信预约</p>
             <h2 id="qr-modal-title">添加微信，预约 Codex 安装</h2>
-            <span>扫码后发送设备型号、系统版本和使用需求。</span>
+            <p class="qr-modal__lead" id="qr-modal-description">扫码后发送设备型号、系统版本和使用需求。</p>
+            <ol class="qr-modal__steps" aria-label="预约流程">
+                <li><small>01</small><strong>扫码添加</strong></li>
+                <li><small>02</small><strong>发送设备</strong></li>
+                <li><small>03</small><strong>确认时间</strong></li>
+            </ol>
         </div>
         <div class="qr-modal__image">
-            <img src="wechat-qr.jpg" alt="Codex 安装交付服务微信二维码" width="1056" height="1441">
+            <div class="qr-modal__image-frame">
+                <img src="wechat-qr.jpg" alt="Codex 安装交付服务微信二维码" width="1056" height="1441">
+            </div>
+            <p class="qr-modal__caption"><strong>微信扫一扫</strong><span>添加后备注“Codex”</span></p>
         </div>
     </div>
 </div>

@@ -233,6 +233,17 @@ assert.match(
 assert.match(codexHome, /id="wechat-float"/);
 assert.match(codexHome, /class="wechat-float__icon"[^>]*src="wechat-icon\.png"/);
 assert.match(codexHome, /id="qr-modal"/);
+assert.match(codexHome, /aria-describedby="qr-modal-description"/);
+assert.match(
+  codexHome,
+  /class="qr-modal__close"[^>]*aria-label="关闭二维码弹窗"[^>]*>\s*<span aria-hidden="true">×<\/span>/,
+);
+assert.match(codexHome, /class="qr-modal__steps"[^>]*aria-label="预约流程"/);
+assert.match(codexHome, /<strong>扫码添加<\/strong>/);
+assert.match(codexHome, /<strong>发送设备<\/strong>/);
+assert.match(codexHome, /<strong>确认时间<\/strong>/);
+assert.match(codexHome, /class="qr-modal__caption"/);
+assert.match(codexHome, /添加后备注“Codex”/);
 assert.match(codexHome, /id="contact"/);
 assert.match(codexHome, /src="wechat-qr\.jpg"/);
 assert.match(codexHome, /class="page-rail"/);
@@ -270,6 +281,18 @@ assert.match(codexCss, /\.guide-steps/);
 assert.match(codexCss, /\.discount-badge/);
 assert.match(codexCss, /\.original-price/);
 assert.match(codexCss, /\.pricing-ledger/);
+assert.match(
+  codexCss,
+  /\.qr-modal__panel\s*\{[^}]*width:\s*min\(680px, calc\(100vw - 48px\)\);[^}]*border-radius:\s*16px;/,
+);
+assert.match(
+  codexCss,
+  /\.qr-modal__close\s*\{[^}]*width:\s*40px;[^}]*height:\s*40px;[^}]*border-radius:\s*50%;/,
+);
+assert.match(codexCss, /\.qr-modal__steps/);
+assert.match(codexCss, /\.qr-modal__caption/);
+assert.match(codexCss, /@keyframes qr-modal-enter/);
+assert.match(codexCss, /backdrop-filter:\s*blur\(3px\)/);
 assert.match(
   codexCss,
   /\.wechat-float\s*\{[^}]*min-height:\s*64px;[^}]*border-radius:\s*14px;[^}]*font-size:\s*16px;/,
