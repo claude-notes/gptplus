@@ -7,6 +7,8 @@
     --cobalt: #2447d7;
     --cobalt-dark: #1937b1;
     --cobalt-pale: #e2e7fb;
+    --wechat: #07c160;
+    --wechat-dark: #05a84f;
     --white: #ffffff;
     --rail-width: 70px;
     --container: 1160px;
@@ -220,6 +222,39 @@ ul {
 .nav-plus:focus-visible {
     border-color: var(--cobalt-dark);
     background: var(--cobalt-dark);
+}
+
+.reservation-trigger {
+    transform-origin: center;
+    animation: reservation-wobble 10s ease-in-out infinite;
+}
+
+@keyframes reservation-wobble {
+    0%,
+    88%,
+    100% {
+        rotate: 0deg;
+    }
+
+    90% {
+        rotate: -4deg;
+    }
+
+    92% {
+        rotate: 4deg;
+    }
+
+    94% {
+        rotate: -3deg;
+    }
+
+    96% {
+        rotate: 2deg;
+    }
+
+    98% {
+        rotate: 0deg;
+    }
 }
 
 .nav-plus:active,
@@ -894,31 +929,27 @@ ul {
     align-items: center;
     gap: 10px;
     padding: 6px 16px 6px 7px;
-    border: 1px solid var(--cobalt);
+    border: 1px solid var(--wechat);
     border-radius: 2px;
     color: var(--white);
-    background: var(--cobalt);
-    box-shadow: 0 12px 28px rgba(36, 71, 215, 0.22);
+    background: var(--wechat);
+    box-shadow: 0 12px 28px rgba(7, 193, 96, 0.24);
     font-size: 13px;
     font-weight: 780;
 }
 
 .wechat-float:hover,
 .wechat-float:focus-visible {
-    border-color: var(--cobalt-dark);
-    background: var(--cobalt-dark);
+    border-color: var(--wechat-dark);
+    background: var(--wechat-dark);
 }
 
-.wechat-float__mark {
-    display: grid;
-    width: 34px;
-    height: 34px;
-    place-items: center;
-    border-radius: 50%;
-    color: var(--cobalt);
-    background: var(--white);
-    font-size: 14px;
-    font-weight: 820;
+.wechat-float__icon {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 auto;
+    border-radius: 8px;
+    object-fit: cover;
 }
 
 .qr-modal[hidden] {
@@ -1413,7 +1444,7 @@ ul {
         padding-right: 12px;
     }
 
-    .wechat-float__mark {
+    .wechat-float__icon {
         width: 30px;
         height: 30px;
     }
@@ -1460,5 +1491,10 @@ ul {
     .motion-ready [data-reveal] {
         opacity: 1;
         transform: none;
+    }
+
+    .reservation-trigger {
+        animation: none;
+        rotate: 0deg;
     }
 }

@@ -173,6 +173,7 @@ const codexFiles = [
   'codex/style.css',
   'codex/script.js',
   'codex/wechat-qr.jpg',
+  'codex/wechat-icon.png',
   'codex/favicon.png',
 ];
 
@@ -195,9 +196,10 @@ assert.match(codexHome, /href="#pricing"/);
 assert.match(codexHome, /href="#faq"/);
 assert.match(
   codexHome,
-  /class="[^\"]*qr-trigger[^\"]*"[^>]*>\s*GPT Plus/,
+  /class="[^\"]*nav-plus[^\"]*reservation-trigger[^\"]*qr-trigger[^\"]*"[^>]*>\s*预约安装/,
 );
 assert.match(codexHome, /id="wechat-float"/);
+assert.match(codexHome, /class="wechat-float__icon"[^>]*src="wechat-icon\.png"/);
 assert.match(codexHome, /id="qr-modal"/);
 assert.match(codexHome, /id="contact"/);
 assert.match(codexHome, /src="wechat-qr\.jpg"/);
@@ -229,8 +231,15 @@ assert.doesNotMatch(codexHome, /[—–]/);
 const codexCss = await read('codex/style.css');
 assert.match(codexCss, /--paper:\s*#f3f0e8/);
 assert.match(codexCss, /--cobalt:\s*#2447d7/);
+assert.match(codexCss, /--wechat:\s*#07c160/);
 assert.match(codexCss, /\.page-rail/);
 assert.match(codexCss, /\.pricing-ledger/);
+assert.match(codexCss, /@keyframes reservation-wobble[\s\S]*rotate:\s*-?\d/);
+assert.doesNotMatch(codexCss, /translateX\(/);
+assert.match(
+  codexCss,
+  /@media \(prefers-reduced-motion: reduce\)[\s\S]*\.reservation-trigger[\s\S]*animation:\s*none/,
+);
 assert.doesNotMatch(codexCss, /--night:\s*#07110f/);
 assert.doesNotMatch(codexCss, /\.delivery-board/);
 
