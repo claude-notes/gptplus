@@ -234,6 +234,22 @@ assert.match(codexCss, /--cobalt:\s*#2447d7/);
 assert.match(codexCss, /--wechat:\s*#07c160/);
 assert.match(codexCss, /\.page-rail/);
 assert.match(codexCss, /\.pricing-ledger/);
+assert.match(
+  codexCss,
+  /\.wechat-float\s*\{[^}]*min-height:\s*64px;[^}]*border-radius:\s*14px;[^}]*font-size:\s*16px;/,
+);
+assert.match(
+  codexCss,
+  /\.wechat-float__icon\s*\{[^}]*width:\s*48px;[^}]*height:\s*48px;/,
+);
+assert.match(
+  codexCss,
+  /@media \(max-width: 640px\)[\s\S]*\.wechat-float\s*\{[^}]*min-height:\s*54px;[^}]*border-radius:\s*12px;[^}]*font-size:\s*14px;/,
+);
+assert.match(
+  codexCss,
+  /@media \(max-width: 640px\)[\s\S]*\.wechat-float__icon\s*\{[^}]*width:\s*36px;[^}]*height:\s*36px;/,
+);
 assert.match(codexCss, /@keyframes reservation-wobble[\s\S]*rotate:\s*-?\d/);
 assert.doesNotMatch(codexCss, /translateX\(/);
 assert.match(
