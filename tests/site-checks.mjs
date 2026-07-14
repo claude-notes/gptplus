@@ -233,6 +233,7 @@ assert.match(codexCss, /--paper:\s*#f3f0e8/);
 assert.match(codexCss, /--cobalt:\s*#2447d7/);
 assert.match(codexCss, /--wechat:\s*#07c160/);
 assert.match(codexCss, /\.page-rail/);
+assert.match(codexCss, /\.rail-title\s*\{[^}]*padding-top:\s*28px;/);
 assert.match(codexCss, /\.pricing-ledger/);
 assert.match(
   codexCss,

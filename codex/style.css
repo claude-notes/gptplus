@@ -115,6 +115,7 @@ ul {
     flex: 1;
     align-items: center;
     margin: 0;
+    padding-top: 28px;
     padding-block: 24px;
     color: var(--muted);
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
