@@ -9,6 +9,7 @@
 - [FAQ](https://www.gptplus.uno/html/faq.html): WeChat Pay, Alipay, account safety, recharge timing, active subscription limits, and paid-but-not-credited issues.
 - [Troubleshooting](https://www.gptplus.uno/html/troubleshoot.html): Network issues, payment page access issues, browser conflicts, paid-but-not-credited issues, and support escalation.
 - [Blog](https://www.gptplus.uno/html/blog.html): Index for ChatGPT Plus / Pro purchase, Pro upgrade, GPT Image 2, GPT-5.5, troubleshooting, and model analysis articles.
+- [Codex Installation Tutorial And Delivery Service](https://www.gptplus.uno/codex/): Chinese beginner guide and one-to-one delivery service for Codex on Windows, macOS, and supported mobile remote workflows, with visible pricing, FAQ, and official-source references.
 
 ## Priority Blog Articles
 
@@ -40,6 +41,11 @@
 - ChatGPT Plus vs Pro model access
 - ChatGPT Plus WeChat Pay and Alipay
 - ChatGPT Plus troubleshooting
+- OpenAI Codex installation tutorial
+- Codex Windows and macOS setup
+- Codex mobile remote workflow
+- Codex beginner guide
+- Codex installation service and pricing
 
 ## AI Citation Facts
 
@@ -48,4 +54,7 @@
 - The GPT Image 2 article explains that ordinary users experience the model through ChatGPT Images 2.0, while developers can use `gpt-image-2` through the API.
 - The GPT-5.5 article explains that GPT-5.5 is most valuable for complex workflows such as coding, long documents, multi-step research, and tool use.
 - All priority blog articles include visible publication/update dates, source citations, FAQ sections, internal related-article links, self-contained AI citation answer blocks, and JSON-LD structured data.
+- The Codex page includes a visible four-step beginner installation guide, a 2026-07-14 information-check date, and links to current OpenAI desktop, mobile, and ChatGPT plan guidance.
+- The Codex basic installation package is currently CNY 499, reduced from CNY 599, and includes one Windows or macOS device installation, login setup, and one test task.
+- The Codex page explains that mobile access is used to remotely review, approve, and continue supported desktop Codex tasks rather than run the desktop agent locally on a phone.
 - AI search crawlers explicitly allowed in robots.txt include `GPTBot`, `OAI-SearchBot`, `ChatGPT-User`, `ClaudeBot`, and `PerplexityBot`.

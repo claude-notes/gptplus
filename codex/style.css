@@ -495,6 +495,69 @@ ul {
     grid-column: 1 / -1;
 }
 
+.guide-heading {
+    max-width: 920px;
+}
+
+.chapter-heading .guide-answer {
+    max-width: 78ch;
+    color: var(--ink);
+}
+
+.chapter-heading .guide-updated {
+    max-width: 90ch;
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.guide-updated a {
+    color: var(--cobalt);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+.guide-steps {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--ink);
+    border-left: 1px solid var(--ink);
+    list-style: none;
+}
+
+.guide-steps li {
+    display: grid;
+    min-height: 190px;
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+    padding: 26px;
+    border-right: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+}
+
+.guide-steps li > span {
+    padding-top: 3px;
+    color: var(--cobalt);
+    font-size: 12px;
+    font-weight: 780;
+}
+
+.guide-steps h3 {
+    margin-bottom: 10px;
+    font-size: 21px;
+    line-height: 1.35;
+    letter-spacing: -0.025em;
+}
+
+.guide-steps p {
+    margin-bottom: 0;
+    color: var(--muted);
+}
+
 .market-lead {
     display: grid;
     min-height: 310px;
@@ -611,7 +674,8 @@ ul {
     color: var(--white);
 }
 
-.plan-title > small {
+.plan-title > small,
+.plan-labels > small {
     display: block;
     margin-bottom: 7px;
     color: var(--muted);
@@ -619,8 +683,31 @@ ul {
     font-weight: 780;
 }
 
-.is-featured .plan-title > small {
+.is-featured .plan-title > small,
+.is-featured .plan-labels > small {
     color: rgba(255, 255, 255, 0.78);
+}
+
+.plan-labels {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 7px;
+}
+
+.plan-labels > small {
+    margin-bottom: 0;
+}
+
+.plan-labels .discount-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 8px;
+    border-radius: 999px;
+    color: var(--white);
+    background: var(--cobalt);
+    line-height: 1.3;
 }
 
 .plan-title h3 {
@@ -642,6 +729,17 @@ ul {
     font-size: 11px;
     font-weight: 650;
     letter-spacing: 0;
+}
+
+.original-price {
+    margin: 7px 0 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.original-price del {
+    text-decoration-thickness: 1px;
 }
 
 .is-featured .price {
@@ -1344,6 +1442,7 @@ ul {
 
     .market-editorial,
     .market-lead,
+    .guide-steps,
     .service-directory,
     .promise-columns,
     .faq-ledger,

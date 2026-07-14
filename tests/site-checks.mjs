@@ -15,7 +15,7 @@ const htmlFiles = [
     .map((file) => `html/${file}`),
 ];
 
-const allHtmlFiles = [...htmlFiles, 'en/index.html'];
+const allHtmlFiles = [...htmlFiles, 'en/index.html', 'codex/index.html'];
 
 for (const relativePath of htmlFiles) {
   const html = await read(relativePath);
@@ -143,6 +143,11 @@ assert.match(script, /menuButton\.setAttribute\('aria-expanded', 'false'\)/);
 const sitemap = await read('sitemap.xml');
 assert.match(sitemap, /xmlns:xhtml="http:\/\/www\.w3\.org\/1999\/xhtml"/);
 assert.match(sitemap, new RegExp(`<loc>${productionOrigin}/en/</loc>`));
+assert.match(sitemap, new RegExp(`<loc>${productionOrigin}/codex/</loc>`));
+assert.match(
+  sitemap,
+  new RegExp(`<loc>${productionOrigin}/codex/</loc>[\\s\\S]*?<lastmod>2026-07-14</lastmod>`),
+);
 assert.match(
   sitemap,
   new RegExp(
@@ -160,6 +165,10 @@ const llms = await read('llms.txt');
 assert.match(
   llms,
   new RegExp(`\\[English Homepage\\]\\(${productionOrigin}/en/\\)`),
+);
+assert.match(
+  llms,
+  new RegExp(`\\[Codex Installation Tutorial And Delivery Service\\]\\(${productionOrigin}/codex/\\)`),
 );
 
 await assert.rejects(
@@ -188,8 +197,27 @@ const codexHome = await read('codex/index.html');
 assert.match(codexHome, /<html lang="zh-CN">/);
 assert.match(
   codexHome,
+  /<title>Codex安装教程与远程安装服务｜Windows、macOS、手机小白指南<\/title>/,
+);
+assert.match(codexHome, /<meta name="description"[\s\S]*Codex怎么安装/);
+assert.match(
+  codexHome,
   /<link rel="canonical" href="https:\/\/www\.gptplus\.uno\/codex\/">/,
 );
+assert.match(codexHome, /<meta property="og:url" content="https:\/\/www\.gptplus\.uno\/codex\/">/);
+assert.match(codexHome, /<h1 id="hero-title">Codex 安装教程<br>把它装进你的工作流<\/h1>/);
+assert.match(codexHome, /id="guide"/);
+assert.match(codexHome, /Codex怎么安装？小白先看这 4 步/);
+assert.match(codexHome, /信息核对：2026年7月14日/);
+assert.match(codexHome, /https:\/\/help\.openai\.com\/en\/articles\/20001276-moving-to-the-new-chatgpt-desktop-app/);
+assert.match(codexHome, /https:\/\/chatgpt\.com\/zh-Hans-CN\/codex\/mobile\//);
+assert.match(codexHome, /<small class="discount-badge">立减100元<\/small>/);
+assert.match(codexHome, /<p class="price">¥499 <small>\/ 次<\/small><\/p>/);
+assert.match(codexHome, /<p class="original-price">原价 <del>¥599<\/del><\/p>/);
+assert.doesNotMatch(codexHome, /599 元起/);
+assert.match(codexHome, /<script type="application\/ld\+json">[\s\S]*"@type": "Service"/);
+assert.match(codexHome, /<script type="application\/ld\+json">[\s\S]*"@type": "FAQPage"/);
+assert.match(codexHome, /<script type="application\/ld\+json">[\s\S]*"@type": "BreadcrumbList"/);
 assert.match(codexHome, /href="#market"/);
 assert.match(
   codexHome,
@@ -238,6 +266,9 @@ assert.match(codexCss, /--cobalt:\s*#2447d7/);
 assert.match(codexCss, /--wechat:\s*#07c160/);
 assert.match(codexCss, /\.page-rail/);
 assert.match(codexCss, /\.rail-title\s*\{[^}]*padding-top:\s*28px;/);
+assert.match(codexCss, /\.guide-steps/);
+assert.match(codexCss, /\.discount-badge/);
+assert.match(codexCss, /\.original-price/);
 assert.match(codexCss, /\.pricing-ledger/);
 assert.match(
   codexCss,
