@@ -44,6 +44,11 @@ for (const relativePath of htmlFiles) {
 const chineseHome = await read('index.html');
 assert.match(
   chineseHome,
+  /<a[^>]*class="codex-side-entry"[^>]*href="codex\/"[^>]*>[\s\S]*Codex安装交付服务[\s\S]*<\/a>/,
+  'Homepage should expose the fixed Codex installation service entry',
+);
+assert.match(
+  chineseHome,
   /<img src="image\/wechat-qr\.png" alt="ChatGPT Plus \/ Pro 客服微信二维码"/,
   'Homepage should load the customer-service QR code from the local image directory',
 );
@@ -119,6 +124,8 @@ for (const relativePath of allHtmlFiles) {
 }
 
 const css = await read('css/style.css');
+assert.match(css, /\.codex-side-entry/);
+assert.match(css, /@media \(max-width: 768px\)[\s\S]*\.codex-side-entry/);
 assert.match(css, /\/\* Mobile readability and header controls \*\//);
 assert.match(css, /@media \(max-width: 768px\)[\s\S]*#theme-toggle[\s\S]*display: grid !important/);
 assert.match(css, /@media \(max-width: 768px\)[\s\S]*white-space: normal/);
@@ -153,6 +160,12 @@ const llms = await read('llms.txt');
 assert.match(
   llms,
   new RegExp(`\\[English Homepage\\]\\(${productionOrigin}/en/\\)`),
+);
+
+await assert.rejects(
+  access(path.join(root, 'docs/superpowers')),
+  { code: 'ENOENT' },
+  'docs/superpowers should not be published with the site source',
 );
 
 const codexFiles = [
