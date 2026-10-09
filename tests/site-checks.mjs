@@ -44,6 +44,11 @@ for (const relativePath of htmlFiles) {
 const chineseHome = await read('index.html');
 assert.match(
   chineseHome,
+  /<a href="https:\/\/chatshare\.uno\/"[\s\S]*?\u524d\u5f80\u5546\u57ce\u8d2d\u4e70[\s\S]*?<\/a>/,
+  'Homepage purchase modal should link to the current store',
+);
+assert.match(
+  chineseHome,
   /<a[^>]*class="codex-side-entry"[^>]*href="codex\/"[^>]*>[\s\S]*Codex安装交付服务[\s\S]*<\/a>/,
   'Homepage should expose the fixed Codex installation service entry',
 );
